@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="John Engates - VP and Field CTO at Cloudflare. Exploring AI, cloud infrastructure, and technology's impact on business and society." />
+  <meta property="og:title" content="John Engates - Link in Bio" />
+  <meta property="og:description" content="Connect with John Engates - VP and Field CTO at Cloudflare" />
+  <meta property="og:image" content="john.png" />
   <title>John Engates - Link in Bio</title>
+  <link rel="icon" type="image/png" href="favicon.ico" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -17,9 +22,9 @@
     }
   </style>
 </head>
-<body class="bg-gray-100 text-center p-6">
+<body class="bg-gray-100 dark:bg-gray-900 text-center p-6 transition-colors duration-200">
   <!-- Container -->
-  <div class="max-w-lg mx-auto bg-white rounded-lg shadow-md p-8">
+  <div class="max-w-lg mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 transition-all duration-200">
     <!-- Profile Picture -->
     <div class="mb-4">
       <img
@@ -29,9 +34,9 @@
       />
     </div>
     <!-- Name -->
-    <h1 class="text-2xl font-bold mb-4">John Engates</h1>
+    <h1 class="text-2xl font-bold mb-4 dark:text-white">John Engates</h1>
     <!-- Bio -->
-    <p class="text-gray-600 mb-6 text-left">
+    <p class="text-gray-600 dark:text-gray-300 mb-6 text-left">
       As a VP and Field CTO at Cloudflare, I explore the convergence of AI and cloud infrastructure, drawing from three decades of experience in Internet evolution. Through global customer and partner engagements, I examine how these technologies reshape business value and human potential. I'm passionate about understanding technology's role in our collective future, particularly how AI and ubiquitous computing will transform how we work, create, and connect.
     </p>
     <!-- Links -->
@@ -66,6 +71,35 @@
         ><i class="fas fa-user mr-2"></i>Full Bio and Headshot</a
       >
     </div>
+    
+    <!-- Contact Form -->
+    <div class="mt-8 p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+      <h2 class="text-xl font-bold mb-4 dark:text-white">Get in Touch</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4">
+        <div>
+          <input type="email" name="email" placeholder="Your email" required
+            class="w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white">
+        </div>
+        <div>
+          <textarea name="message" placeholder="Your message" required rows="4"
+            class="w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white"></textarea>
+        </div>
+        <button type="submit" 
+          class="w-full py-2 text-lg text-white bg-blue-500 hover:bg-blue-600 rounded-md transition-colors duration-200">
+          Send Message
+        </button>
+      </form>
+    </div>
   </div>
+
+  <!-- Dark mode toggle -->
+  <button onclick="document.documentElement.classList.toggle('dark')"
+    class="fixed bottom-4 right-4 p-2 bg-gray-200 dark:bg-gray-700 rounded-full shadow-lg">
+    <svg class="w-6 h-6 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+      </path>
+    </svg>
+  </button>
 </body>
 </html>
