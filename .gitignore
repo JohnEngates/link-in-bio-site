@@ -1,2 +1,21 @@
-.aider*
+# Environment and IDE files
 .env
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+*.pyc
+__pycache__/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Aider files
+.aider*
