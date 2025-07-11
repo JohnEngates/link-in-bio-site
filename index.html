@@ -4,7 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>John Engates - Link in Bio</title>
+  <title>John Engates - AI Research & Technology Innovation | Link in Bio</title>
+  <meta name="description" content="John Engates - Exploring the frontiers of Agentic AI and multi-agent systems. Former Field CTO at Cloudflare. Connect with me on LinkedIn, X, and GitHub.">
+  
+  <!-- Open Graph / Social Media Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="John Engates - AI Research & Technology Innovation">
+  <meta property="og:description" content="Connect with John Engates. Researching Agentic AI and multi-agent systems. Former Field CTO at Cloudflare with over 30 years of technology leadership.">
+  <meta property="og:image" content="john.png">
+  <meta property="og:url" content="https://johnengates.com">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="John Engates - AI Research & Technology Innovation">
+  <meta name="twitter:description" content="Exploring Agentic AI and multi-agent systems. Former Field CTO at Cloudflare. Technology innovator with 30+ years experience.">
+  <meta name="twitter:image" content="john.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="engates1x1.png">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,54 +37,75 @@
       content: "𝕏";
       font-size: 1.2em;
     }
+    /* Animation classes */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+    .fade-in-delay {
+      animation: fadeIn 0.6s ease-out 0.2s both;
+    }
+    /* Profile image hover effect */
+    .profile-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .profile-hover:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
   </style>
 </head>
-<body class="text-center p-6 min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-gray-50">
+<body class="text-center p-4 sm:p-6 min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-gray-50">
   <!-- Container -->
-  <div class="max-w-lg mx-auto bg-white rounded-xl shadow-xl ring-1 ring-gray-200 p-8">
+  <div class="max-w-lg mx-auto bg-white rounded-xl shadow-xl ring-1 ring-gray-200 p-6 sm:p-8 fade-in">
     <!-- Profile Picture -->
     <div class="mb-4">
       <img
-        class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-gray-200 shadow-lg"
-        src="john.png"
-        alt="John Engates Headshot"
+        class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-gray-200 shadow-lg profile-hover"
+        src="engates1x1.png"
+        alt="John Engates - AI Researcher and Technology Innovator"
+        loading="eager"
       />
     </div>
     <!-- Name -->
-    <h1 class="text-2xl font-bold mb-4">John Engates</h1>
+    <h1 class="text-2xl font-bold mb-4 fade-in-delay">John Engates</h1>
     <!-- Bio -->
-    <p class="text-gray-600 mb-6 text-left">
-      As Field CTO at Cloudflare, I draw on over three decades of experience at the edge of Internet innovation to help organizations navigate the convergence of AI, security, and cloud software and infrastructure. I work closely with global customers and partners to shape forward-looking strategies that unlock business value and human potential. With a deep passion for how technology is reshaping our world, I focus on the transformative impact of AI and ubiquitous connectivity—reimagining how we work, build, and connect in an increasingly digital future.    </p>
+    <p class="text-sm sm:text-base text-gray-600 mb-6 text-left fade-in-delay">
+      Currently deep in research on Agentic AI and experimenting with swarms of autonomous AI agents to explore new frontiers in collective intelligence and emergent behaviors. After three decades at the forefront of Internet innovation—including leadership roles as Field CTO at Cloudflare and CTO at Rackspace—I'm now focused on pushing the boundaries of what's possible when AI agents collaborate, learn, and solve complex problems together. Passionate about the transformative potential of multi-agent systems and their applications in reshaping how we work, create, and innovate.    </p>
     <!-- Links -->
-    <div class="space-y-4">
+    <div class="space-y-3 sm:space-y-4 fade-in-delay">
       <a
         href="https://www.linkedin.com/in/jengates/"
-        class="block w-full py-2 text-lg text-white bg-blue-700 hover:bg-blue-800 rounded-md flex items-center justify-center shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5"
+        class="block w-full py-3 text-lg text-white bg-blue-700 hover:bg-blue-800 rounded-md flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
         target="_blank"
-        ><i class="fab fa-linkedin mr-2"></i>LinkedIn</a
+        rel="noopener noreferrer"
+        aria-label="Connect with John Engates on LinkedIn"
+        ><i class="fab fa-linkedin mr-2" aria-hidden="true"></i>LinkedIn</a
       >
       <a
         href="https://x.com/jengates"
-        class="block w-full py-2 text-lg text-white bg-blue-400 hover:bg-blue-500 rounded-md flex items-center justify-center shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5"
+        class="block w-full py-3 text-lg text-white bg-black hover:bg-gray-800 rounded-md flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
         target="_blank"
-        ><i class="fa fa-twitter"></i></a
+        rel="noopener noreferrer"
+        aria-label="Follow John Engates on X (formerly Twitter)"
+        ><i class="fa fa-twitter mr-2" aria-hidden="true"></i>X</a
       >
       <a
         href="https://github.com/JohnEngates"
-        class="block w-full py-2 text-lg text-white bg-gray-800 hover:bg-gray-900 rounded-md flex items-center justify-center shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5"
+        class="block w-full py-3 text-lg text-white bg-gray-800 hover:bg-gray-900 rounded-md flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
         target="_blank"
-        ><i class="fab fa-github mr-2"></i>GitHub</a
-      >
-      <a
-        href="https://cloudflare.com"
-        class="block w-full py-2 text-lg text-white bg-blue-500 hover:bg-blue-600 rounded-md flex items-center justify-center shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5"
-        target="_blank"
-        ><i class="fas fa-cloud mr-2"></i>Cloudflare</a
+        rel="noopener noreferrer"
+        aria-label="View John Engates' projects on GitHub"
+        ><i class="fab fa-github mr-2" aria-hidden="true"></i>GitHub</a
       >
       <a
         href="bio.html"
-        class="block w-full py-2 text-lg text-white bg-green-500 hover:bg-green-600 rounded-md flex items-center justify-center shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5"
-        ><i class="fas fa-user mr-2"></i>Full Bio and Headshot</a
+        class="block w-full py-3 text-lg text-white bg-green-500 hover:bg-green-600 rounded-md flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
+        aria-label="Read John Engates' full biography and download headshot"
+        ><i class="fas fa-user mr-2" aria-hidden="true"></i>Full Bio and Headshot</a
       >
     </div>
   </div>

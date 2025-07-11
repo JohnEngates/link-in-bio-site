@@ -4,49 +4,74 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>John Engates - Full Bio</title>
+  <title>John Engates - Biography | AI Researcher & Technology Leader</title>
+  <meta name="description" content="Full biography of John Engates. AI researcher exploring multi-agent systems. Former Field CTO at Cloudflare with over 30 years of technology leadership.">
+  
+  <!-- Open Graph / Social Media Tags -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="John Engates Biography - AI Researcher & Technology Leader">
+  <meta property="og:description" content="Full biography of John Engates. Pioneering research in Agentic AI and multi-agent systems. Former Field CTO at Cloudflare, CTO at Rackspace and NTT.">
+  <meta property="og:image" content="engates_john.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="engates1x1.png">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
     }
+    /* Animation classes */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+    .fade-in-delay {
+      animation: fadeIn 0.6s ease-out 0.2s both;
+    }
   </style>
 </head>
-<body class="text-center p-6 min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-gray-50">
+<body class="text-center p-4 sm:p-6 min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-gray-50">
   <!-- Container -->
-  <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl ring-1 ring-gray-200 p-8">
+  <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl ring-1 ring-gray-200 p-6 sm:p-8 fade-in">
     <!-- Profile Picture -->
     <div class="mb-6">
       <img
-        class="w-1/2 h-auto mx-auto rounded-lg border-4 border-gray-200 shadow-lg"
+        class="w-full sm:w-1/2 h-auto mx-auto rounded-lg border-4 border-gray-200 shadow-lg"
         src="engates_john.jpg"
-        alt="John Engates Headshot"
+        alt="John Engates - Professional headshot"
+        loading="eager"
       />
       <!-- Download Full Size Headshot Button -->
       <a
       href="engates_john.jpg"
       download
-      class="inline-block py-1 px-3 text-base text-white bg-green-500 hover:bg-green-600 rounded-md mt-4 shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5"
+      class="inline-block py-2 px-4 text-base text-white bg-green-500 hover:bg-green-600 rounded-md mt-4 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
+      aria-label="Download John Engates' professional headshot"
       >Download Full Size Headshot</a>
     </div>
       <!-- Name and Title -->
-    <h1 class="text-3xl font-bold mb-1">John Engates</h1>
-    <h2 class="text-2xl font-semibold mb-4">Field Chief Technology Officer, Cloudflare</h2>
+    <h1 class="text-2xl sm:text-3xl font-bold mb-1 fade-in-delay">John Engates</h1>
+    <h2 class="text-xl sm:text-2xl font-semibold mb-4 fade-in-delay">AI Researcher & Technology Innovator</h2>
     <!-- Full Bio -->
-    <p class="text-gray-600 text-left mb-8">
-      John Engates is the Field Chief Technology Officer at Cloudflare, where he helps global organizations secure their infrastructure, modernize their networks, and navigate the evolving landscape of AI and cloud.
+    <p class="text-sm sm:text-base text-gray-600 text-left mb-6 sm:mb-8 fade-in-delay">
+      John Engates is currently pioneering research in Agentic AI, exploring the fascinating world of autonomous AI agents and their emergent behaviors when working in collaborative swarms. His work focuses on pushing the boundaries of multi-agent systems, investigating how AI agents can cooperate, compete, and create solutions that surpass individual capabilities.
     </p>
-    <p class="text-gray-600 text-left mb-8">
-      With over 30 years at the forefront of the Internet, John began his career launching one of Texas's first ISPs and went on to serve as CTO at both Rackspace and NTT Global Networks. His deep expertise in scaling digital platforms and simplifying complex technologies has made him a sought-after speaker and trusted advisor to enterprises, startups, and partners alike.
+    <p class="text-sm sm:text-base text-gray-600 text-left mb-6 sm:mb-8 fade-in-delay">
+      With over 30 years at the forefront of Internet innovation, John's journey began with launching one of Texas's first ISPs. He then served as CTO at Rackspace, where he helped pioneer cloud computing, and later as Client CTO at NTT Global Networks. Most recently, as Field CTO at Cloudflare, he guided global enterprises through their AI and security transformations. This deep expertise in scaling platforms and emerging technologies now fuels his independent research into the next frontier of AI.
     </p>
-    <p class="text-gray-600 text-left mb-8">
-      Beyond his executive role, John serves on the boards of a Texas-based bank and a manufacturing company and actively mentors early-stage founders. He earned his degree from the University of Texas at San Antonio and still calls Texas home, where he enjoys outdoor adventures and global travel with his wife and daughters.
+    <p class="text-sm sm:text-base text-gray-600 text-left mb-6 sm:mb-8 fade-in-delay">
+      John continues to serve on the boards of a Texas-based bank and a manufacturing company while actively mentoring early-stage founders, particularly those working in AI and emerging technologies. His current research explores practical applications of multi-agent AI systems in solving complex real-world problems. He earned his degree from the University of Texas at San Antonio and splits his time between Texas and Colorado, where the diverse tech ecosystems and outdoor landscapes inspire his work. When not pushing the boundaries of AI, he enjoys mountain adventures and global travel with his wife and daughters.
     </p>
     <!-- Link to index Page -->
     <a
       href="index.html"
-      class="inline-block py-2 px-4 text-lg text-white bg-blue-500 hover:bg-blue-600 rounded-md mt-4 shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5"
+      class="inline-block py-3 px-6 text-lg text-white bg-blue-500 hover:bg-blue-600 rounded-md mt-4 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
+      aria-label="Return to John Engates' main link page"
       >Back to Main Page</a
     >
       <!-- Download Full Size Headshot -->
