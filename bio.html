@@ -43,6 +43,48 @@
     .fade-in-delay {
       animation: fadeIn 0.6s ease-out 0.2s both;
     }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      animation: fadeIn 0.3s ease-out;
+    }
+    .modal-content {
+      position: relative;
+      background-color: white;
+      margin: 5% auto;
+      padding: 2rem;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 0.75rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      animation: slideIn 0.3s ease-out;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .close-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 2rem;
+      height: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #6b7280;
+      transition: color 0.2s;
+    }
+    .close-button:hover {
+      color: #374151;
+    }
   </style>
 </head>
 <body class="text-center p-4 sm:p-6 min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-gray-50">
@@ -60,22 +102,39 @@
       <a
       href="engates_john.jpg"
       download
-      class="inline-block py-2 px-4 text-base text-white bg-green-500 hover:bg-green-600 rounded-md mt-4 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
+      class="inline-block py-2 px-4 text-base text-white bg-green-500 hover:bg-green-600 rounded-md mt-4 mr-2 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
       aria-label="Download John Engates' professional headshot"
       >Download Full Size Headshot</a>
+      <button
+      onclick="showModal()"
+      class="inline-block py-2 px-4 text-base text-white bg-blue-500 hover:bg-blue-600 rounded-md mt-4 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
+      aria-label="View John Engates' speaker bio"
+      >View Speaker Bio</button>
     </div>
       <!-- Name and Title -->
     <h1 class="text-2xl sm:text-3xl font-bold mb-1 fade-in-delay">John Engates</h1>
     <h2 class="text-xl sm:text-2xl font-semibold mb-4 fade-in-delay">AI Researcher & Technology Innovator</h2>
     <!-- Full Bio -->
-    <p class="text-sm sm:text-base text-gray-600 text-left mb-6 sm:mb-8 fade-in-delay">
-      John Engates is currently pioneering research in Agentic AI, exploring the fascinating world of autonomous AI agents and their emergent behaviors when working in collaborative swarms. His work focuses on pushing the boundaries of multi-agent systems, investigating how AI agents can cooperate, compete, and create solutions that surpass individual capabilities.
+    <p class="text-sm sm:text-base text-gray-600 text-left mb-4 fade-in-delay">
+      <strong>John Engates</strong> is pioneering the future of artificial intelligence through his research on autonomous AI agents and multi-agent systems. After three decades at the forefront of distributed computing, from launching one of Texas's first ISPs to shaping the cloud infrastructure that powers today's Internet, John now explores how swarms of AI agents can collaborate to solve humanity's most complex challenges.
+    </p>
+    <p class="text-sm sm:text-base text-gray-600 text-left mb-4 fade-in-delay">
+      As Field CTO at Cloudflare (2021-2025), John guided global enterprises through their AI and security transformations. Previously, as CTO at Rackspace for almost 18 years, he played a pivotal role in democratizing cloud computing. He helped bring "Fanatical Support" to life, building the culture and teams that set a new standard for customer service in tech. Under his leadership, Rackspace's Intensive Hosting division supported some of the Internet's most demanding workloads, including a little startup called YouTube.
+    </p>
+    <p class="text-sm sm:text-base text-gray-600 text-left mb-4 fade-in-delay">
+      John's knack for seeing around corners led to founding moments in open source infrastructure. When Frank Frankovsky reached out via Facebook message about "open sourcing cloud computing hardware," John's immediate "yes" launched Rackspace's involvement in the Open Compute Project. He also led the RackLabs team that created the distributed storage system that became OpenStack Swift, now powering some of the largest storage platforms on Earth. That early Adobe demo validation? "Rough around the edges," they said, but it was enough to change the world.
+    </p>
+    <p class="text-sm sm:text-base text-gray-600 text-left mb-4 fade-in-delay">
+      When Healthcare.gov crashed in 2013, John was among those called to the White House to help rescue the site that millions depended on. His testimony before Congress on cloud computing's strategic value helped shape public sector digital transformation. Throughout his career, he's been the translator between complex technology and business value, whether speaking at global conferences, advising boards, or mentoring the next generation through TechStars.
+    </p>
+    <p class="text-sm sm:text-base text-gray-600 text-left mb-4 fade-in-delay">
+      Today, John serves on the boards of Frost Bank (NYSE: CFR) and James Avery Craftsman. Named UTSA Alumnus of the Year in 2014, he remains connected to his alma mater through the College of Sciences Advancement Council. An early-stage investor in cloud and SaaS startups, he continues to spot the technologies that will define tomorrow.
+    </p>
+    <p class="text-sm sm:text-base text-gray-600 text-left mb-4 fade-in-delay">
+      John splits his time between Texas (where he works) and Colorado (where he plays), finding inspiration in both the tech ecosystems and mountain landscapes. When not pushing the boundaries of AI, you'll find him off-roading, cycling, snowboarding, or capturing it all through his photography.
     </p>
     <p class="text-sm sm:text-base text-gray-600 text-left mb-6 sm:mb-8 fade-in-delay">
-      With over 30 years at the forefront of Internet innovation, John's journey began with launching one of Texas's first ISPs. He then served as CTO at Rackspace, where he helped pioneer cloud computing, and later as Client CTO at NTT Global Networks. Most recently, as Field CTO at Cloudflare, he guided global enterprises through their AI and security transformations. This deep expertise in scaling platforms and emerging technologies now fuels his independent research into the next frontier of AI.
-    </p>
-    <p class="text-sm sm:text-base text-gray-600 text-left mb-6 sm:mb-8 fade-in-delay">
-      John continues to serve on the boards of a Texas-based bank and a manufacturing company while actively mentoring early-stage founders, particularly those working in AI and emerging technologies. His current research explores practical applications of multi-agent AI systems in solving complex real-world problems. He earned his degree from the University of Texas at San Antonio and splits his time between Texas and Colorado, where the diverse tech ecosystems and outdoor landscapes inspire his work. When not pushing the boundaries of AI, he enjoys mountain adventures and global travel with his wife and daughters.
+      His current research explores the emergent behaviors and collective intelligence that arise when AI agents work together: a natural evolution from decades spent building the distributed systems that connect our world.
     </p>
     <!-- Link to index Page -->
     <a
@@ -86,5 +145,86 @@
     >
       <!-- Download Full Size Headshot -->
   </div>
+  
+  <!-- Speaker Bio Modal -->
+  <div id="speakerModal" class="modal" onclick="hideModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="close-button" onclick="hideModal()" aria-label="Close modal">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <h2 class="text-xl font-bold mb-4">Speaker Bio</h2>
+      <div id="speakerBioText" class="text-sm text-gray-700 leading-relaxed mb-4">
+        <p class="mb-3"><strong>John Engates</strong> is a pioneering researcher in Agentic AI and multi-agent systems, exploring how autonomous AI agents can collaborate to solve complex security challenges. With over 30 years at the intersection of distributed computing and cybersecurity, John has shaped how organizations defend their digital infrastructure—from building one of Texas's first ISPs to serving as Field CTO at Cloudflare (2021-2025), where he guided global enterprises through the convergence of AI and zero-trust security architectures.</p>
+        
+        <p class="mb-3">As CTO at Rackspace for nearly 18 years, John helped launch OpenStack and the Open Compute Project while building security-first cloud infrastructure that supported everything from startups like YouTube to critical government systems. When Healthcare.gov crashed in 2013, he was among those called to the White House to help secure and stabilize the platform millions depended on.</p>
+        
+        <p>Today, John's research focuses on how AI agent swarms can revolutionize cybersecurity—from autonomous threat detection and response to self-healing infrastructure. He serves on the boards of Frost Bank (NYSE: CFR) and James Avery Craftsman, mentors through TechStars, and remains a sought-after voice on the future of AI-powered security. His unique perspective bridges decades of building secure, scalable systems with cutting-edge research into how AI will transform how we protect them.</p>
+      </div>
+      <div class="flex gap-2">
+        <button 
+          onclick="copyBio()"
+          class="flex-1 py-2 px-4 text-white bg-green-500 hover:bg-green-600 rounded-md shadow-md hover:shadow-lg transition-all duration-200"
+        >
+          <span id="copyButtonText">Copy to Clipboard</span>
+        </button>
+        <button 
+          onclick="downloadBio()"
+          class="flex-1 py-2 px-4 text-white bg-blue-500 hover:bg-blue-600 rounded-md shadow-md hover:shadow-lg transition-all duration-200"
+        >
+          Download as Text
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function showModal() {
+      document.getElementById('speakerModal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function hideModal(event) {
+      if (!event || event.target.id === 'speakerModal' || event.type === 'click') {
+        document.getElementById('speakerModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    }
+    
+    function copyBio() {
+      const bioText = document.getElementById('speakerBioText').innerText;
+      navigator.clipboard.writeText(bioText).then(() => {
+        const button = document.getElementById('copyButtonText');
+        const originalText = button.innerText;
+        button.innerText = 'Copied!';
+        setTimeout(() => {
+          button.innerText = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+    }
+    
+    function downloadBio() {
+      const bioText = document.getElementById('speakerBioText').innerText;
+      const blob = new Blob([bioText], { type: 'text/plain' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'John_Engates_Speaker_Bio.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    }
+    
+    // Close modal on Escape key
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        hideModal();
+      }
+    });
+  </script>
 </body>
 </html>
