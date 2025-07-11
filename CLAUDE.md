@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static "link-in-bio" website for John Engates, Field CTO at Cloudflare. It consists of two simple HTML pages with no build process or backend requirements.
+This is a static "link-in-bio" website for John Engates, AI researcher and technology innovator. It consists of two simple HTML pages with no build process or backend requirements.
 
 ## Development Commands
 
@@ -31,34 +31,35 @@ Since this is a static website with no build process:
 The site consists of two interconnected pages:
 
 1. **index.html** - Main landing page with:
-   - Profile picture (`john.png`)
-   - Brief bio and title
-   - Social media links (LinkedIn, Twitter/X, GitHub)
-   - Link to Cloudflare
+   - Profile picture (`engates1x1.png`)
+   - Brief bio about AI research and multi-agent systems
+   - Social media links (LinkedIn, X, GitHub)
    - Navigation to full bio page
 
 2. **bio.html** - Detailed biography page with:
    - Professional headshot (`engates_john.jpg`)
-   - Full three-paragraph biography
+   - Full narrative biography with career highlights
    - Headshot download functionality
+   - Speaker bio modal with copy/download options
    - Back navigation to main page
 
 ## Key Technical Details
 
 - **Styling**: Tailwind CSS via CDN (no custom CSS files)
 - **Icons**: Font Awesome via CDN for social media icons
-- **Custom Styles**: Minimal inline CSS for Twitter/X icon color customization
+- **Custom Styles**: Inline CSS for Twitter/X icon, animations, and modal functionality
 - **Images**: Direct file references (no optimization pipeline)
 - **Responsive Design**: Tailwind utility classes handle mobile/desktop layouts
 
 ## File References
 
 When modifying the site structure or styling:
-- Social links section: `index.html:30-49`
-- Bio content: `bio.html:21-29`
-- Profile image styling: `index.html:18-20`
-- Custom Twitter/X icon styles: `index.html:9-13`
+- Bio text box: `index.html:57-63`
+- Social links section: `index.html:65-93`
+- Full biography: `bio.html:54-84`
+- Speaker bio modal: `bio.html:99-150`
+- Custom Twitter/X icon styles: `index.html:15-21`
 
 ## Deployment
 
-This static site can be deployed to any web server or static hosting service without modification. Common options include GitHub Pages, Netlify, Vercel, or any traditional web hosting.
+This static site is deployed via Cloudflare Pages with automatic deployment on push to the main branch. It can also be deployed to any web server or static hosting service without modification.

@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJXVGK8SHM"></script>
   <script>
@@ -21,12 +26,17 @@
   <meta property="og:type" content="profile">
   <meta property="og:title" content="John Engates Biography - AI Researcher & Technology Leader">
   <meta property="og:description" content="Full biography of John Engates. Pioneering research in Agentic AI and multi-agent systems. Former Field CTO at Cloudflare, CTO at Rackspace and NTT.">
-  <meta property="og:image" content="engates_john.jpg">
+  <meta property="og:image" content="https://bio.johnengates.com/engates_john.jpg">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="engates1x1.png">
   
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <script src="https://cdn.tailwindcss.com" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -106,7 +116,7 @@
       aria-label="Download John Engates' professional headshot"
       >Download Full Size Headshot</a>
       <button
-      onclick="showModal()"
+      id="viewSpeakerBioBtn"
       class="inline-block py-2 px-4 text-base text-white bg-blue-500 hover:bg-blue-600 rounded-md mt-4 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
       aria-label="View John Engates' speaker bio"
       >View Speaker Bio</button>
@@ -147,14 +157,14 @@
   </div>
   
   <!-- Speaker Bio Modal -->
-  <div id="speakerModal" class="modal" onclick="hideModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="close-button" onclick="hideModal()" aria-label="Close modal">
+  <div id="speakerModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+    <div class="modal-content" role="document">
+      <button id="closeModalBtn" class="close-button" aria-label="Close modal">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
-      <h2 class="text-xl font-bold mb-4">Speaker Bio</h2>
+      <h2 id="modalTitle" class="text-xl font-bold mb-4">Speaker Bio</h2>
       <div id="speakerBioText" class="text-sm text-gray-700 leading-relaxed mb-4">
         <p class="mb-3"><strong>John Engates</strong> is a pioneering researcher in Agentic AI and multi-agent systems, exploring how autonomous AI agents can collaborate to solve complex security challenges. With over 30 years at the intersection of distributed computing and cybersecurity, John has shaped how organizations defend their digital infrastructure—from building one of Texas's first ISPs to serving as Field CTO at Cloudflare (2021-2025), where he guided global enterprises through the convergence of AI and zero-trust security architectures.</p>
         
@@ -164,13 +174,13 @@
       </div>
       <div class="flex gap-2">
         <button 
-          onclick="copyBio()"
+          id="copyBioBtn"
           class="flex-1 py-2 px-4 text-white bg-green-500 hover:bg-green-600 rounded-md shadow-md hover:shadow-lg transition-all duration-200"
         >
           <span id="copyButtonText">Copy to Clipboard</span>
         </button>
         <button 
-          onclick="downloadBio()"
+          id="downloadBioBtn"
           class="flex-1 py-2 px-4 text-white bg-blue-500 hover:bg-blue-600 rounded-md shadow-md hover:shadow-lg transition-all duration-200"
         >
           Download as Text
@@ -180,49 +190,137 @@
   </div>
   
   <script>
+    // Modal management
+    const modal = document.getElementById('speakerModal');
+    const viewBioBtn = document.getElementById('viewSpeakerBioBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const copyBtn = document.getElementById('copyBioBtn');
+    const downloadBtn = document.getElementById('downloadBioBtn');
+    let focusedElementBeforeModal;
+    
     function showModal() {
-      document.getElementById('speakerModal').style.display = 'block';
+      focusedElementBeforeModal = document.activeElement;
+      modal.style.display = 'block';
       document.body.style.overflow = 'hidden';
+      modal.setAttribute('aria-hidden', 'false');
+      
+      // Focus management
+      setTimeout(() => {
+        closeBtn.focus();
+      }, 100);
     }
     
-    function hideModal(event) {
-      if (!event || event.target.id === 'speakerModal' || event.type === 'click') {
-        document.getElementById('speakerModal').style.display = 'none';
-        document.body.style.overflow = 'auto';
+    function hideModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+      modal.setAttribute('aria-hidden', 'true');
+      
+      // Return focus to triggering element
+      if (focusedElementBeforeModal) {
+        focusedElementBeforeModal.focus();
       }
     }
     
     function copyBio() {
       const bioText = document.getElementById('speakerBioText').innerText;
-      navigator.clipboard.writeText(bioText).then(() => {
+      
+      // Modern clipboard API with fallback
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(bioText).then(() => {
+          const button = document.getElementById('copyButtonText');
+          const originalText = button.innerText;
+          button.innerText = 'Copied!';
+          setTimeout(() => {
+            button.innerText = originalText;
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy text: ', err);
+          fallbackCopyTextToClipboard(bioText);
+        });
+      } else {
+        fallbackCopyTextToClipboard(bioText);
+      }
+    }
+    
+    function fallbackCopyTextToClipboard(text) {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.style.position = "fixed";
+      textArea.style.left = "-999999px";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      
+      try {
+        document.execCommand('copy');
         const button = document.getElementById('copyButtonText');
-        const originalText = button.innerText;
         button.innerText = 'Copied!';
         setTimeout(() => {
-          button.innerText = originalText;
+          button.innerText = 'Copy to Clipboard';
         }, 2000);
-      }).catch(err => {
-        console.error('Failed to copy text: ', err);
-      });
+      } catch (err) {
+        console.error('Fallback: Unable to copy', err);
+        alert('Copy failed. Please select and copy manually.');
+      }
+      
+      document.body.removeChild(textArea);
     }
     
     function downloadBio() {
-      const bioText = document.getElementById('speakerBioText').innerText;
-      const blob = new Blob([bioText], { type: 'text/plain' });
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'John_Engates_Speaker_Bio.txt';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
+      try {
+        const bioText = document.getElementById('speakerBioText').innerText;
+        const blob = new Blob([bioText], { type: 'text/plain;charset=utf-8' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'John_Engates_Speaker_Bio.txt';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      } catch (err) {
+        console.error('Download failed:', err);
+        alert('Download failed. Please try copying the text instead.');
+      }
     }
     
-    // Close modal on Escape key
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
+    // Event listeners
+    viewBioBtn.addEventListener('click', showModal);
+    closeBtn.addEventListener('click', hideModal);
+    copyBtn.addEventListener('click', copyBio);
+    downloadBtn.addEventListener('click', downloadBio);
+    
+    // Click outside to close
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
         hideModal();
+      }
+    });
+    
+    // Escape key to close
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.style.display === 'block') {
+        hideModal();
+      }
+    });
+    
+    // Trap focus within modal
+    modal.addEventListener('keydown', (event) => {
+      if (event.key === 'Tab') {
+        const focusableElements = modal.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+        
+        if (event.shiftKey && document.activeElement === firstFocusable) {
+          event.preventDefault();
+          lastFocusable.focus();
+        } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+          event.preventDefault();
+          firstFocusable.focus();
+        }
       }
     });
   </script>
