@@ -19,3 +19,4 @@ Thumbs.db
 
 # Aider files
 .aider*
+node_modules/
