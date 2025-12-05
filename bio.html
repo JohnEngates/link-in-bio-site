@@ -1,58 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  
+
   <!-- Security Headers -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJXVGK8SHM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-NJXVGK8SHM');
   </script>
   <title>John Engates - Biography | AI Researcher & Technology Leader</title>
-  <meta name="description" content="Full biography of John Engates. AI researcher exploring multi-agent systems. Former Field CTO at Cloudflare with over 30 years of technology leadership.">
-  
+  <meta name="description"
+    content="Full biography of John Engates. AI researcher exploring multi-agent systems. Former Field CTO at Cloudflare with over 30 years of technology leadership.">
+
   <!-- Open Graph / Social Media Tags -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="John Engates Biography - AI Researcher & Technology Leader">
-  <meta property="og:description" content="Full biography of John Engates. Pioneering research in Agentic AI and multi-agent systems. Former Field CTO at Cloudflare, CTO at Rackspace and NTT.">
+  <meta property="og:description"
+    content="Full biography of John Engates. Pioneering research in Agentic AI and multi-agent systems. Former Field CTO at Cloudflare, CTO at Rackspace and NTT.">
   <meta property="og:image" content="https://bio.johnengates.com/engates_john.jpg">
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="engates1x1.png">
-  
+
   <!-- Preconnect to external domains -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
     }
+
     /* Animation classes */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     .fade-in {
       animation: fadeIn 0.6s ease-out;
     }
+
     .fade-in-delay {
       animation: fadeIn 0.6s ease-out 0.2s both;
     }
+
     /* Modal styles */
     .modal {
       display: none;
@@ -65,9 +91,9 @@
       z-index: 1000;
       animation: fadeIn 0.3s ease-out;
     }
+
     .modal-content {
       position: relative;
-      background-color: white;
       margin: 5% auto;
       padding: 2rem;
       width: 90%;
@@ -76,10 +102,19 @@
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
       animation: slideIn 0.3s ease-out;
     }
+
     @keyframes slideIn {
-      from { transform: translateY(-20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
+
     .close-button {
       position: absolute;
       top: 1rem;
@@ -92,103 +127,156 @@
       color: #6b7280;
       transition: color 0.2s;
     }
+
     .close-button:hover {
       color: #374151;
     }
   </style>
+  <script>
+    // Check for saved theme preference or system preference
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+
+    function toggleTheme() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+      }
+    }
+  </script>
 </head>
-<body class="text-center p-4 sm:p-6 min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-gray-50">
+
+<body
+  class="text-center p-4 sm:p-6 min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-gray-50 dark:from-gray-900 dark:via-gray-900 dark:to-black transition-colors duration-500">
+
+  <!-- Theme Toggle Button -->
+  <button onclick="toggleTheme()"
+    class="absolute top-4 right-4 p-2 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white/80 dark:hover:bg-gray-700/80 backdrop-blur-sm shadow-md transition-all duration-300 z-50 group"
+    aria-label="Toggle Dark Mode">
+    <i
+      class="fas fa-sun text-yellow-500 text-xl hidden dark:inline group-hover:rotate-90 transition-transform duration-500"></i>
+    <i
+      class="fas fa-moon text-gray-600 text-xl dark:hidden group-hover:-rotate-12 transition-transform duration-500"></i>
+  </button>
+
   <!-- Container -->
-  <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl ring-1 ring-gray-200 p-6 sm:p-8 fade-in">
+  <div
+    class="max-w-4xl mx-auto bg-white/70 dark:bg-gray-800/60 backdrop-blur-xl rounded-xl shadow-xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 p-6 sm:p-8 fade-in transition-colors duration-500 border border-white/20 dark:border-gray-700/30">
     <!-- Profile Picture -->
     <div class="mb-6">
-      <img
-        class="w-full sm:w-1/2 h-auto mx-auto rounded-lg border-4 border-gray-200 shadow-lg"
-        src="engates_john.jpg"
-        alt="John Engates - Professional headshot"
-        loading="eager"
-      />
+      <img class="w-full sm:w-1/2 h-auto mx-auto rounded-lg border-4 border-gray-200 dark:border-gray-700 shadow-lg"
+        src="engates_john.jpg" alt="John Engates - Professional headshot" loading="eager" />
       <!-- Download Full Size Headshot Button -->
-      <a
-      href="engates_john.jpg"
-      download
-      class="inline-block py-2 px-4 text-base text-white bg-green-500 hover:bg-green-600 rounded-md mt-4 mr-2 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
-      aria-label="Download John Engates' professional headshot"
-      >Download Full Size Headshot</a>
-      <button
-      id="viewSpeakerBioBtn"
-      class="inline-block py-2 px-4 text-base text-white bg-blue-500 hover:bg-blue-600 rounded-md mt-4 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
-      aria-label="View John Engates' speaker bio"
-      >View Speaker Bio</button>
+      <a href="engates_john.jpg" download
+        class="inline-block py-2 px-4 text-base text-white bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 rounded-md mt-4 mr-2 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
+        aria-label="Download John Engates' professional headshot">Download Full Size Headshot</a>
+      <button id="viewSpeakerBioBtn"
+        class="inline-block py-2 px-4 text-base text-white bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 rounded-md mt-4 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
+        aria-label="View John Engates' speaker bio">View Speaker Bio</button>
     </div>
-      <!-- Name and Title -->
-    <h1 class="text-2xl sm:text-3xl font-bold mb-1 fade-in-delay">John Engates</h1>
-    <h2 class="text-xl sm:text-2xl font-semibold mb-4 fade-in-delay">AI Researcher & Technology Innovator</h2>
+    <!-- Name and Title -->
+    <h1 class="text-2xl sm:text-3xl font-bold mb-1 fade-in-delay text-gray-900 dark:text-white">John Engates</h1>
+    <h2 class="text-xl sm:text-2xl font-semibold mb-4 fade-in-delay text-gray-700 dark:text-gray-300">AI Researcher &
+      Technology Innovator</h2>
     <!-- Full Bio -->
-    <p class="text-sm sm:text-base text-gray-600 text-left mb-4 fade-in-delay">
-      <strong>John Engates</strong> is pioneering the future of artificial intelligence through his research on autonomous AI agents and multi-agent systems. After three decades at the forefront of distributed computing, from launching one of Texas's first ISPs to shaping the cloud infrastructure that powers today's Internet, John now explores how swarms of AI agents can collaborate to solve humanity's most complex challenges.
+    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-4 fade-in-delay">
+      <strong class="text-gray-900 dark:text-gray-200">John Engates</strong> is pioneering the future of artificial
+      intelligence through his research on autonomous AI agents and multi-agent systems. After three decades at the
+      forefront of distributed computing, from launching one of Texas's first ISPs to shaping the cloud infrastructure
+      that powers today's Internet, John now explores how swarms of AI agents can collaborate to solve humanity's most
+      complex challenges.
     </p>
-    <p class="text-sm sm:text-base text-gray-600 text-left mb-4 fade-in-delay">
-      As Field CTO at Cloudflare (2021-2025), John guided global enterprises through their AI and security transformations. Previously, as CTO at Rackspace for almost 18 years, he played a pivotal role in democratizing cloud computing. He helped bring "Fanatical Support" to life, building the culture and teams that set a new standard for customer service in tech. Under his leadership, Rackspace's Intensive Hosting division supported some of the Internet's most demanding workloads, including a little startup called YouTube.
+    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-4 fade-in-delay">
+      As Field CTO at Cloudflare (2021-2025), John guided global enterprises through their AI and security
+      transformations. Previously, as CTO at Rackspace for almost 18 years, he played a pivotal role in democratizing
+      cloud computing. He helped bring "Fanatical Support" to life, building the culture and teams that set a new
+      standard for customer service in tech. Under his leadership, Rackspace's Intensive Hosting division supported some
+      of the Internet's most demanding workloads, including a little startup called YouTube.
     </p>
-    <p class="text-sm sm:text-base text-gray-600 text-left mb-4 fade-in-delay">
-      John's knack for seeing around corners led to founding moments in open source infrastructure. When Frank Frankovsky reached out via Facebook message about "open sourcing cloud computing hardware," John's immediate "yes" launched Rackspace's involvement in the Open Compute Project. He also led the RackLabs team that created the distributed storage system that became OpenStack Swift, now powering some of the largest storage platforms on Earth. That early Adobe demo validation? "Rough around the edges," they said, but it was enough to change the world.
+    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-4 fade-in-delay">
+      John's knack for seeing around corners led to founding moments in open source infrastructure. When Frank
+      Frankovsky reached out via Facebook message about "open sourcing cloud computing hardware," John's immediate "yes"
+      launched Rackspace's involvement in the Open Compute Project. He also led the RackLabs team that created the
+      distributed storage system that became OpenStack Swift, now powering some of the largest storage platforms on
+      Earth. That early Adobe demo validation? "Rough around the edges," they said, but it was enough to change the
+      world.
     </p>
-    <p class="text-sm sm:text-base text-gray-600 text-left mb-4 fade-in-delay">
-      When Healthcare.gov crashed in 2013, John was among those called to the White House to help rescue the site that millions depended on. His testimony before Congress on cloud computing's strategic value helped shape public sector digital transformation. Throughout his career, he's been the translator between complex technology and business value, whether speaking at global conferences, advising boards, or mentoring the next generation through TechStars.
+    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-4 fade-in-delay">
+      When Healthcare.gov crashed in 2013, John was among those called to the White House to help rescue the site that
+      millions depended on. His testimony before Congress on cloud computing's strategic value helped shape public
+      sector digital transformation. Throughout his career, he's been the translator between complex technology and
+      business value, whether speaking at global conferences, advising boards, or mentoring the next generation through
+      TechStars.
     </p>
-    <p class="text-sm sm:text-base text-gray-600 text-left mb-4 fade-in-delay">
-      Today, John serves on the boards of Frost Bank (NYSE: CFR) and James Avery Craftsman. Named UTSA Alumnus of the Year in 2014, he remains connected to his alma mater through the College of Sciences Advancement Council. An early-stage investor in cloud and SaaS startups, he continues to spot the technologies that will define tomorrow.
+    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-4 fade-in-delay">
+      Today, John serves on the boards of Frost Bank (NYSE: CFR) and James Avery Craftsman. Named UTSA Alumnus of the
+      Year in 2014, he remains connected to his alma mater through the College of Sciences Advancement Council. An
+      early-stage investor in cloud and SaaS startups, he continues to spot the technologies that will define tomorrow.
     </p>
-    <p class="text-sm sm:text-base text-gray-600 text-left mb-4 fade-in-delay">
-      John splits his time between Texas (where he works) and Colorado (where he plays), finding inspiration in both the tech ecosystems and mountain landscapes. When not pushing the boundaries of AI, you'll find him off-roading, cycling, snowboarding, or capturing it all through his photography.
+    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-4 fade-in-delay">
+      John splits his time between Texas (where he works) and Colorado (where he plays), finding inspiration in both the
+      tech ecosystems and mountain landscapes. When not pushing the boundaries of AI, you'll find him off-roading,
+      cycling, snowboarding, or capturing it all through his photography.
     </p>
-    <p class="text-sm sm:text-base text-gray-600 text-left mb-6 sm:mb-8 fade-in-delay">
-      His current research explores the emergent behaviors and collective intelligence that arise when AI agents work together: a natural evolution from decades spent building the distributed systems that connect our world.
+    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-6 sm:mb-8 fade-in-delay">
+      His current research explores the emergent behaviors and collective intelligence that arise when AI agents work
+      together: a natural evolution from decades spent building the distributed systems that connect our world.
     </p>
     <!-- Link to index Page -->
-    <a
-      href="index.html"
-      class="inline-block py-3 px-6 text-lg text-white bg-blue-500 hover:bg-blue-600 rounded-md mt-4 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
-      aria-label="Return to John Engates' main link page"
-      >Back to Main Page</a
-    >
-      <!-- Download Full Size Headshot -->
+    <a href="index.html"
+      class="inline-block py-3 px-6 text-lg text-white bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 rounded-md mt-4 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
+      aria-label="Return to John Engates' main link page">Back to Main Page</a>
+    <!-- Download Full Size Headshot -->
   </div>
-  
+
   <!-- Speaker Bio Modal -->
   <div id="speakerModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
-    <div class="modal-content" role="document">
-      <button id="closeModalBtn" class="close-button" aria-label="Close modal">
+    <div class="modal-content bg-white dark:bg-gray-800 text-gray-900 dark:text-white" role="document">
+      <button id="closeModalBtn" class="close-button dark:text-gray-400 dark:hover:text-gray-200"
+        aria-label="Close modal">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
       <h2 id="modalTitle" class="text-xl font-bold mb-4">Speaker Bio</h2>
-      <div id="speakerBioText" class="text-sm text-gray-700 leading-relaxed mb-4">
-        <p class="mb-3"><strong>John Engates</strong> is a pioneering researcher in Agentic AI and multi-agent systems, exploring how autonomous AI agents can collaborate to solve complex security challenges. With over 30 years at the intersection of distributed computing and cybersecurity, John has shaped how organizations defend their digital infrastructure—from building one of Texas's first ISPs to serving as Field CTO at Cloudflare (2021-2025), where he guided global enterprises through the convergence of AI and zero-trust security architectures.</p>
-        
-        <p class="mb-3">As CTO at Rackspace for nearly 18 years, John helped launch OpenStack and the Open Compute Project while building security-first cloud infrastructure that supported everything from startups like YouTube to critical government systems. When Healthcare.gov crashed in 2013, he was among those called to the White House to help secure and stabilize the platform millions depended on.</p>
-        
-        <p>Today, John's research focuses on how AI agent swarms can revolutionize cybersecurity—from autonomous threat detection and response to self-healing infrastructure. He serves on the boards of Frost Bank (NYSE: CFR) and James Avery Craftsman, mentors through TechStars, and remains a sought-after voice on the future of AI-powered security. His unique perspective bridges decades of building secure, scalable systems with cutting-edge research into how AI will transform how we protect them.</p>
+      <div id="speakerBioText" class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+        <p class="mb-3"><strong class="text-gray-900 dark:text-white">John Engates</strong> is a pioneering researcher
+          in Agentic AI and multi-agent systems, exploring how autonomous AI agents can collaborate to solve complex
+          security challenges. With over 30 years at the intersection of distributed computing and cybersecurity, John
+          has shaped how organizations defend their digital infrastructure—from building one of Texas's first ISPs to
+          serving as Field CTO at Cloudflare (2021-2025), where he guided global enterprises through the convergence of
+          AI and zero-trust security architectures.</p>
+
+        <p class="mb-3">As CTO at Rackspace for nearly 18 years, John helped launch OpenStack and the Open Compute
+          Project while building security-first cloud infrastructure that supported everything from startups like
+          YouTube to critical government systems. When Healthcare.gov crashed in 2013, he was among those called to the
+          White House to help secure and stabilize the platform millions depended on.</p>
+
+        <p>Today, John's research focuses on how AI agent swarms can revolutionize cybersecurity—from autonomous threat
+          detection and response to self-healing infrastructure. He serves on the boards of Frost Bank (NYSE: CFR) and
+          James Avery Craftsman, mentors through TechStars, and remains a sought-after voice on the future of AI-powered
+          security. His unique perspective bridges decades of building secure, scalable systems with cutting-edge
+          research into how AI will transform how we protect them.</p>
       </div>
       <div class="flex gap-2">
-        <button 
-          id="copyBioBtn"
-          class="flex-1 py-2 px-4 text-white bg-green-500 hover:bg-green-600 rounded-md shadow-md hover:shadow-lg transition-all duration-200"
-        >
+        <button id="copyBioBtn"
+          class="flex-1 py-2 px-4 text-white bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 rounded-md shadow-md hover:shadow-lg transition-all duration-200">
           <span id="copyButtonText">Copy to Clipboard</span>
         </button>
-        <button 
-          id="downloadBioBtn"
-          class="flex-1 py-2 px-4 text-white bg-blue-500 hover:bg-blue-600 rounded-md shadow-md hover:shadow-lg transition-all duration-200"
-        >
+        <button id="downloadBioBtn"
+          class="flex-1 py-2 px-4 text-white bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 rounded-md shadow-md hover:shadow-lg transition-all duration-200">
           Download as Text
         </button>
       </div>
     </div>
   </div>
-  
+
   <script>
     // Modal management
     const modal = document.getElementById('speakerModal');
@@ -197,33 +285,33 @@
     const copyBtn = document.getElementById('copyBioBtn');
     const downloadBtn = document.getElementById('downloadBioBtn');
     let focusedElementBeforeModal;
-    
+
     function showModal() {
       focusedElementBeforeModal = document.activeElement;
       modal.style.display = 'block';
       document.body.style.overflow = 'hidden';
       modal.setAttribute('aria-hidden', 'false');
-      
+
       // Focus management
       setTimeout(() => {
         closeBtn.focus();
       }, 100);
     }
-    
+
     function hideModal() {
       modal.style.display = 'none';
       document.body.style.overflow = 'auto';
       modal.setAttribute('aria-hidden', 'true');
-      
+
       // Return focus to triggering element
       if (focusedElementBeforeModal) {
         focusedElementBeforeModal.focus();
       }
     }
-    
+
     function copyBio() {
       const bioText = document.getElementById('speakerBioText').innerText;
-      
+
       // Modern clipboard API with fallback
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(bioText).then(() => {
@@ -241,7 +329,7 @@
         fallbackCopyTextToClipboard(bioText);
       }
     }
-    
+
     function fallbackCopyTextToClipboard(text) {
       const textArea = document.createElement("textarea");
       textArea.value = text;
@@ -250,7 +338,7 @@
       document.body.appendChild(textArea);
       textArea.focus();
       textArea.select();
-      
+
       try {
         document.execCommand('copy');
         const button = document.getElementById('copyButtonText');
@@ -262,10 +350,10 @@
         console.error('Fallback: Unable to copy', err);
         alert('Copy failed. Please select and copy manually.');
       }
-      
+
       document.body.removeChild(textArea);
     }
-    
+
     function downloadBio() {
       try {
         const bioText = document.getElementById('speakerBioText').innerText;
@@ -284,27 +372,27 @@
         alert('Download failed. Please try copying the text instead.');
       }
     }
-    
+
     // Event listeners
     viewBioBtn.addEventListener('click', showModal);
     closeBtn.addEventListener('click', hideModal);
     copyBtn.addEventListener('click', copyBio);
     downloadBtn.addEventListener('click', downloadBio);
-    
+
     // Click outside to close
     modal.addEventListener('click', (event) => {
       if (event.target === modal) {
         hideModal();
       }
     });
-    
+
     // Escape key to close
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && modal.style.display === 'block') {
         hideModal();
       }
     });
-    
+
     // Trap focus within modal
     modal.addEventListener('keydown', (event) => {
       if (event.key === 'Tab') {
@@ -313,7 +401,7 @@
         );
         const firstFocusable = focusableElements[0];
         const lastFocusable = focusableElements[focusableElements.length - 1];
-        
+
         if (event.shiftKey && document.activeElement === firstFocusable) {
           event.preventDefault();
           lastFocusable.focus();
@@ -324,5 +412,8 @@
       }
     });
   </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
 </body>
+
 </html>
