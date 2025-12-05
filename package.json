@@ -1,0 +1,26 @@
+{
+  "name": "link-in-bio-site",
+  "version": "1.0.0",
+  "description": "A clean, professional link-in-bio website for John Engates, featuring his work in AI research and multi-agent systems.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnEngates/link-in-bio-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JohnEngates/link-in-bio-site/issues"
+  },
+  "homepage": "https://github.com/JohnEngates/link-in-bio-site#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  }
+}

@@ -35,23 +35,13 @@
   <link rel="icon" type="image/png" href="engates1x1.png">
 
   <!-- Preconnect to external domains -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Local Styles -->
+  <link href="output.css" rel="stylesheet">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -182,52 +172,91 @@
     </div>
     <!-- Name and Title -->
     <h1 class="text-2xl sm:text-3xl font-bold mb-1 fade-in-delay text-gray-900 dark:text-white">John Engates</h1>
-    <h2 class="text-xl sm:text-2xl font-semibold mb-4 fade-in-delay text-gray-700 dark:text-gray-300">AI Researcher &
+    <h2 class="text-xl sm:text-2xl font-semibold mb-2 fade-in-delay text-gray-700 dark:text-gray-300">AI Researcher &
       Technology Innovator</h2>
-    <!-- Full Bio -->
-    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-4 fade-in-delay">
-      <strong class="text-gray-900 dark:text-gray-200">John Engates</strong> is pioneering the future of artificial
-      intelligence through his research on autonomous AI agents and multi-agent systems. After three decades at the
-      forefront of distributed computing, from launching one of Texas's first ISPs to shaping the cloud infrastructure
-      that powers today's Internet, John now explores how swarms of AI agents can collaborate to solve humanity's most
-      complex challenges.
-    </p>
-    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-4 fade-in-delay">
-      As Field CTO at Cloudflare (2021-2025), John guided global enterprises through their AI and security
-      transformations. Previously, as CTO at Rackspace for almost 18 years, he played a pivotal role in democratizing
-      cloud computing. He helped bring "Fanatical Support" to life, building the culture and teams that set a new
-      standard for customer service in tech. Under his leadership, Rackspace's Intensive Hosting division supported some
-      of the Internet's most demanding workloads, including a little startup called YouTube.
-    </p>
-    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-4 fade-in-delay">
-      John's knack for seeing around corners led to founding moments in open source infrastructure. When Frank
-      Frankovsky reached out via Facebook message about "open sourcing cloud computing hardware," John's immediate "yes"
-      launched Rackspace's involvement in the Open Compute Project. He also led the RackLabs team that created the
-      distributed storage system that became OpenStack Swift, now powering some of the largest storage platforms on
-      Earth. That early Adobe demo validation? "Rough around the edges," they said, but it was enough to change the
-      world.
-    </p>
-    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-4 fade-in-delay">
-      When Healthcare.gov crashed in 2013, John was among those called to the White House to help rescue the site that
-      millions depended on. His testimony before Congress on cloud computing's strategic value helped shape public
-      sector digital transformation. Throughout his career, he's been the translator between complex technology and
-      business value, whether speaking at global conferences, advising boards, or mentoring the next generation through
-      TechStars.
-    </p>
-    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-4 fade-in-delay">
-      Today, John serves on the boards of Frost Bank (NYSE: CFR) and James Avery Craftsman. Named UTSA Alumnus of the
-      Year in 2014, he remains connected to his alma mater through the College of Sciences Advancement Council. An
-      early-stage investor in cloud and SaaS startups, he continues to spot the technologies that will define tomorrow.
-    </p>
-    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-4 fade-in-delay">
-      John splits his time between Texas (where he works) and Colorado (where he plays), finding inspiration in both the
-      tech ecosystems and mountain landscapes. When not pushing the boundaries of AI, you'll find him off-roading,
-      cycling, snowboarding, or capturing it all through his photography.
-    </p>
-    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-left mb-6 sm:mb-8 fade-in-delay">
-      His current research explores the emergent behaviors and collective intelligence that arise when AI agents work
-      together: a natural evolution from decades spent building the distributed systems that connect our world.
-    </p>
+
+    <!-- Skills & Expertise Tags -->
+    <div class="flex flex-wrap justify-center gap-2 mb-6 fade-in-delay">
+      <span
+        class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full text-sm font-semibold">Agentic
+        AI</span>
+      <span
+        class="px-3 py-1 bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 rounded-full text-sm font-semibold">Multi-Agent
+        Systems</span>
+      <span
+        class="px-3 py-1 bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full text-sm font-semibold">Cloud
+        Security</span>
+      <span
+        class="px-3 py-1 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 rounded-full text-sm font-semibold">Zero
+        Trust</span>
+      <span
+        class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 rounded-full text-sm font-semibold">Distributed
+        Systems</span>
+    </div>
+
+    <!-- Career Timeline -->
+    <div class="text-left mb-8 fade-in-delay">
+      <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6">
+        <strong class="text-gray-900 dark:text-gray-200">John Engates</strong> is currently deep in research on swarms
+        of autonomous AI agents. His career bridges three decades of internet innovation.
+      </p>
+
+      <div class="space-y-6 border-l-2 border-gray-200 dark:border-gray-700 ml-3 pl-6 relative">
+        <!-- Item 1 -->
+        <div class="relative">
+          <div
+            class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-500 border-2 border-white dark:border-gray-800">
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white">Field CTO at Cloudflare</h3>
+          <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">2021 - 2025</span>
+          <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Guided global enterprises through AI and security
+            transformations, helping shape the future of Zero Trust architecture.</p>
+        </div>
+        <!-- Item 2 -->
+        <div class="relative">
+          <div
+            class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-gray-400 border-2 border-white dark:border-gray-800">
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white">CTO at Rackspace</h3>
+          <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">2003 - 2021</span>
+          <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Played a pivotal role in democratizing cloud
+            computing. Helped launch OpenStack and the Open Compute Project. Built the culture of "Fanatical Support".
+          </p>
+        </div>
+        <!-- Item 3 -->
+        <div class="relative">
+          <div
+            class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-gray-400 border-2 border-white dark:border-gray-800">
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white">Public Sector & Policy</h3>
+          <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">2013</span>
+          <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Called to the White House to help rescue
+            Healthcare.gov. Testified before Congress on cloud computing's strategic value.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Speaking Section -->
+    <div
+      class="text-left bg-gray-50/50 dark:bg-gray-900/50 rounded-lg p-6 mb-6 fade-in-delay border border-gray-100 dark:border-gray-700/50">
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3"><i
+          class="fas fa-microphone-alt mr-2 text-blue-500"></i>Speaking & Media</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+        John is a frequent keynote speaker on the future of AI, cloud security, and digital transformation. He has
+        appeared in major tech publications and on stage at global conferences.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#"
+          class="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline">
+          View Recent Talks <i class="fas fa-arrow-right ml-1"></i>
+        </a>
+        <a href="#"
+          class="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline">
+          Media Kit <i class="fas fa-download ml-1"></i>
+        </a>
+      </div>
+    </div>
+
     <!-- Link to index Page -->
     <a href="index.html"
       class="inline-block py-3 px-6 text-lg text-white bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 rounded-md mt-4 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
