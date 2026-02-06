@@ -25,12 +25,63 @@
     content="Former Cloudflare Field CTO exploring swarms of autonomous agents, collective intelligence, and emergent behaviors in AI. Tinkering with Claude Code, open-source LLMs, and more.">
   <meta name="keywords" content="agentic AI, multi-agent systems, autonomous agents, Claude Code, open-source LLMs, AI research, collective intelligence, John Engates">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="John Engates Biography - AI Researcher & Technology Leader">
+  <meta name="twitter:description"
+    content="Full biography of John Engates. Pioneering research in Agentic AI and multi-agent systems.">
+  <meta name="twitter:image" content="https://bio.johnengates.com/engates_john.jpg">
+
   <!-- Open Graph / Social Media Tags -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="John Engates Biography - AI Researcher & Technology Leader">
   <meta property="og:description"
     content="Full biography of John Engates. Pioneering research in Agentic AI and multi-agent systems. Former Field CTO at Cloudflare, CTO at Rackspace and NTT.">
   <meta property="og:image" content="https://bio.johnengates.com/engates_john.jpg">
+  <meta property="og:url" content="https://bio.johnengates.com/bio.html">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://bio.johnengates.com/bio.html">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "John Engates",
+      "url": "https://bio.johnengates.com",
+      "image": "https://bio.johnengates.com/engates_john.jpg",
+      "jobTitle": "AI Researcher & Technology Innovator",
+      "description": "Former Cloudflare Field CTO exploring swarms of autonomous agents, collective intelligence, and emergent behaviors in AI.",
+      "sameAs": [
+        "https://www.linkedin.com/in/jengates/",
+        "https://x.com/jengates",
+        "https://github.com/JohnEngates"
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Frost Bank",
+          "tickerSymbol": "CFR"
+        },
+        {
+          "@type": "Organization",
+          "name": "James Avery Artisan Jewelry"
+        },
+        {
+          "@type": "Organization",
+          "name": "Techstars"
+        },
+        {
+          "@type": "Organization",
+          "name": "SIM San Antonio"
+        }
+      ]
+    }
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="engates1x1.png">
@@ -39,9 +90,6 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Local Styles -->
-  <link href="output.css" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -122,6 +170,43 @@
     .close-button:hover {
       color: #374151;
     }
+
+    /* Respect reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in,
+      .fade-in-delay {
+        animation: none;
+      }
+
+      .modal {
+        animation: none;
+      }
+
+      .modal-content {
+        animation: none;
+      }
+
+      * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+
+    /* Skip to content link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      padding: 8px 16px;
+      background: #1e40af;
+      color: white;
+      z-index: 100;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
   </style>
   <script>
     // Check for saved theme preference or system preference
@@ -146,6 +231,8 @@
 <body
   class="text-center p-4 sm:p-6 min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-gray-50 dark:from-gray-900 dark:via-gray-900 dark:to-black transition-colors duration-500">
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Theme Toggle Button -->
   <button onclick="toggleTheme()"
     class="absolute top-4 right-4 p-2 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white/80 dark:hover:bg-gray-700/80 backdrop-blur-sm shadow-md transition-all duration-300 z-50 group"
@@ -157,12 +244,12 @@
   </button>
 
   <!-- Container -->
-  <div
+  <main id="main-content"
     class="max-w-4xl mx-auto bg-white/70 dark:bg-gray-800/60 backdrop-blur-xl rounded-xl shadow-xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 p-6 sm:p-8 fade-in transition-colors duration-500 border border-white/20 dark:border-gray-700/30">
     <!-- Profile Picture -->
     <div class="mb-6">
       <img class="w-full sm:w-1/2 h-auto mx-auto rounded-lg border-4 border-gray-200 dark:border-gray-700 shadow-lg"
-        src="engates_john.jpg" alt="John Engates - Professional headshot" loading="eager" />
+        src="engates_john.jpg" alt="John Engates - Professional headshot" loading="eager" width="5101" height="3401" />
       <!-- Download Full Size Headshot Button -->
       <a href="engates_john.jpg" download
         class="inline-block py-2 px-4 text-base text-white bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 rounded-md mt-4 mr-2 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
@@ -373,7 +460,7 @@
     <footer class="mt-6 text-xs text-gray-400 dark:text-gray-500">
       San Antonio, TX
     </footer>
-  </div>
+  </main>
 
   <!-- Speaker Bio Modal -->
   <div id="speakerModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
