@@ -25,12 +25,63 @@
     content="Former Cloudflare Field CTO exploring swarms of autonomous agents, collective intelligence, and emergent behaviors in AI. Tinkering with Claude Code, open-source LLMs, and more.">
   <meta name="keywords" content="agentic AI, multi-agent systems, autonomous agents, Claude Code, open-source LLMs, AI research, collective intelligence, John Engates">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="John Engates Biography - AI Researcher & Technology Leader">
+  <meta name="twitter:description"
+    content="Full biography of John Engates. Pioneering research in Agentic AI and multi-agent systems.">
+  <meta name="twitter:image" content="https://bio.johnengates.com/engates_john.jpg">
+
   <!-- Open Graph / Social Media Tags -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="John Engates Biography - AI Researcher & Technology Leader">
   <meta property="og:description"
     content="Full biography of John Engates. Pioneering research in Agentic AI and multi-agent systems. Former Field CTO at Cloudflare, CTO at Rackspace and NTT.">
   <meta property="og:image" content="https://bio.johnengates.com/engates_john.jpg">
+  <meta property="og:url" content="https://bio.johnengates.com/bio.html">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://bio.johnengates.com/bio.html">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "John Engates",
+      "url": "https://bio.johnengates.com",
+      "image": "https://bio.johnengates.com/engates_john.jpg",
+      "jobTitle": "AI Researcher & Technology Innovator",
+      "description": "Former Cloudflare Field CTO exploring swarms of autonomous agents, collective intelligence, and emergent behaviors in AI.",
+      "sameAs": [
+        "https://www.linkedin.com/in/jengates/",
+        "https://x.com/jengates",
+        "https://github.com/JohnEngates"
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Frost Bank",
+          "tickerSymbol": "CFR"
+        },
+        {
+          "@type": "Organization",
+          "name": "James Avery Artisan Jewelry"
+        },
+        {
+          "@type": "Organization",
+          "name": "Techstars"
+        },
+        {
+          "@type": "Organization",
+          "name": "SIM San Antonio"
+        }
+      ]
+    }
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="engates1x1.png">
@@ -39,9 +90,6 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Local Styles -->
-  <link href="output.css" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -122,6 +170,43 @@
     .close-button:hover {
       color: #374151;
     }
+
+    /* Respect reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in,
+      .fade-in-delay {
+        animation: none;
+      }
+
+      .modal {
+        animation: none;
+      }
+
+      .modal-content {
+        animation: none;
+      }
+
+      * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+
+    /* Skip to content link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      padding: 8px 16px;
+      background: #1e40af;
+      color: white;
+      z-index: 100;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
   </style>
   <script>
     // Check for saved theme preference or system preference
@@ -146,6 +231,8 @@
 <body
   class="text-center p-4 sm:p-6 min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-gray-50 dark:from-gray-900 dark:via-gray-900 dark:to-black transition-colors duration-500">
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Theme Toggle Button -->
   <button onclick="toggleTheme()"
     class="absolute top-4 right-4 p-2 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white/80 dark:hover:bg-gray-700/80 backdrop-blur-sm shadow-md transition-all duration-300 z-50 group"
@@ -157,12 +244,12 @@
   </button>
 
   <!-- Container -->
-  <div
+  <main id="main-content"
     class="max-w-4xl mx-auto bg-white/70 dark:bg-gray-800/60 backdrop-blur-xl rounded-xl shadow-xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 p-6 sm:p-8 fade-in transition-colors duration-500 border border-white/20 dark:border-gray-700/30">
     <!-- Profile Picture -->
     <div class="mb-6">
       <img class="w-full sm:w-1/2 h-auto mx-auto rounded-lg border-4 border-gray-200 dark:border-gray-700 shadow-lg"
-        src="engates_john.jpg" alt="John Engates - Professional headshot" loading="eager" />
+        src="engates_john.jpg" alt="John Engates - Professional headshot" loading="eager" width="5101" height="3401" />
       <!-- Download Full Size Headshot Button -->
       <a href="engates_john.jpg" download
         class="inline-block py-2 px-4 text-base text-white bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 rounded-md mt-4 mr-2 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
@@ -232,13 +319,13 @@
     <!-- Restored Narrative Bio -->
     <div class="text-left mb-10 space-y-4 text-gray-600 dark:text-gray-400 fade-in-delay leading-relaxed">
       <p>
-        <strong class="text-gray-900 dark:text-gray-200">John Engates</strong> builds AI agent systems that coordinate multiple autonomous agents to solve problems single agents can't. Over 30 years he's co-founded one of Texas's first ISPs, built hosting infrastructure for early YouTube, and created the distributed storage system that became OpenStack Swift. Now he's focused on how AI agents collaborate at scale.
+        <strong class="text-gray-900 dark:text-gray-200">John Engates</strong> builds AI agent systems that coordinate multiple autonomous agents to solve problems single agents can't. Over 30 years he's co-founded one of Texas's first ISPs, built hosting infrastructure for early YouTube, and led the team that created the distributed storage system that became OpenStack Swift. Now he's focused on how AI agents collaborate at scale.
       </p>
       <p>
         At Rackspace (CTO, 2000-2018), John's team built and managed the infrastructure that kept YouTube running as it grew from startup to billion-user platform acquired by Google. His team scaled "Fanatical Support"—24/7 expert help that became the company's identity. The Intensive Hosting division he ran supported some of the web's most demanding workloads when "the cloud" meant actual servers in actual data centers.
       </p>
       <p>
-        In 2009, when a Facebook engineer asked about open-sourcing data center hardware, John committed Rackspace as a founding member of the Open Compute Project. That same year, his team built the distributed storage system that became OpenStack Swift. It now runs at CERN, Wikimedia, and hundreds of deployments worldwide.
+        In 2011, when a hardware engineering leader at Facebook asked about open-sourcing data center hardware, John committed Rackspace as a founding member of the Open Compute Project. Around the same time, his team built the distributed storage system that became OpenStack Swift. It now runs at CERN, Wikimedia, and hundreds of deployments worldwide.
       </p>
       <p>
         The White House called in 2013 when Healthcare.gov's launch crisis needed infrastructure expertise. He sat in the Situation Room with heads of HHS and CMS, explaining what went wrong. At Cloudflare (Field CTO, 2021-2025), he guided enterprise AI and security deployments. Today he serves on the boards of Frost Bank (NYSE: CFR) and James Avery Artisan Jewelry, mentors Techstars companies, and leads <a href="https://chapter.simnet.org/sanantonio/home" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">SIM San Antonio</a>.
@@ -337,7 +424,7 @@
             <h4 class="font-bold text-gray-900 dark:text-white">CTO & VP Operations</h4>
             <p class="text-sm text-gray-600 dark:text-gray-400">Rackspace</p>
             <span class="text-xs text-gray-500">2000 – 2018 · 18 years</span>
-            <p class="text-sm text-gray-700 dark:text-gray-300 mt-2">Built cloud infrastructure supporting platforms serving billions of users, including YouTube. Co-created OpenStack Swift, now powering 500+ global deployments.</p>
+            <p class="text-sm text-gray-700 dark:text-gray-300 mt-2">Built cloud infrastructure supporting platforms serving billions of users, including YouTube. Led the team that created OpenStack Swift, now powering 500+ global deployments.</p>
           </div>
         </div>
         <!-- INTERNET DIRECT -->
@@ -373,7 +460,7 @@
     <footer class="mt-6 text-xs text-gray-400 dark:text-gray-500">
       San Antonio, TX
     </footer>
-  </div>
+  </main>
 
   <!-- Speaker Bio Modal -->
   <div id="speakerModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
@@ -388,7 +475,7 @@
       <div id="speakerBioText" class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-left">
         <p class="mb-3"><strong class="text-gray-900 dark:text-white">John Engates</strong> builds multi-agent AI systems that coordinate swarms of autonomous agents to tackle problems too complex for single agents. He focuses on practical enterprise deployment: security incident response, infrastructure management, workflow orchestration.</p>
 
-        <p class="mb-3">Over 30 years he's co-founded one of Texas's first ISPs and served as Rackspace CTO for 18 years. At Rackspace, he built infrastructure for YouTube's growth and co-created OpenStack Swift. He's been called to the White House to advise on Healthcare.gov's 2013 crisis and led Cloudflare's Field CTO team helping enterprises deploy AI and zero-trust architectures.</p>
+        <p class="mb-3">Over 30 years he's co-founded one of Texas's first ISPs and served as Rackspace CTO for 18 years. At Rackspace, he built infrastructure for YouTube's growth and led the team that created OpenStack Swift. He's been called to the White House to advise on Healthcare.gov's 2013 crisis and led Cloudflare's Field CTO team helping enterprises deploy AI and zero-trust architectures.</p>
 
         <p class="mb-3">His current focus is agent systems that genuinely work in production, not demos. He serves on the boards of Frost Bank (NYSE: CFR) and James Avery Artisan Jewelry, mentors Techstars companies, and speaks on practical AI deployment for enterprises.</p>
       </div>
