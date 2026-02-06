@@ -33,48 +33,11 @@
   <meta property="og:url" content="https://bio.johnengates.com">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="John Engates - AI Research & Technology Innovation">
   <meta name="twitter:description"
     content="Exploring Agentic AI and multi-agent systems. Former Field CTO at Cloudflare. Technology innovator with 30+ years experience.">
   <meta name="twitter:image" content="https://bio.johnengates.com/john.png">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://bio.johnengates.com/">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "John Engates",
-    "url": "https://bio.johnengates.com",
-    "image": "https://bio.johnengates.com/engates_john.jpg",
-    "jobTitle": "AI Researcher & Technology Innovator",
-    "description": "Exploring the frontiers of Agentic AI and multi-agent systems. Former Field CTO at Cloudflare, CTO at Rackspace.",
-    "sameAs": [
-      "https://www.linkedin.com/in/jengates/",
-      "https://x.com/jengates",
-      "https://github.com/JohnEngates"
-    ],
-    "knowsAbout": ["Agentic AI", "Multi-Agent Systems", "Cloud Computing", "Cyber Security"],
-    "alumniOf": [
-      {
-        "@type": "Organization",
-        "name": "Cloudflare"
-      },
-      {
-        "@type": "Organization",
-        "name": "Rackspace"
-      }
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "San Antonio",
-      "addressRegion": "TX"
-    }
-  }
-  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="engates1x1.png">
@@ -83,6 +46,9 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Local Styles -->
+  <link href="output.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
@@ -131,39 +97,6 @@
       transform: scale(1.05);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
-
-    /* Respect reduced motion preferences */
-    @media (prefers-reduced-motion: reduce) {
-      .fade-in,
-      .fade-in-delay {
-        animation: none;
-      }
-
-      .profile-hover {
-        transition: none;
-      }
-
-      * {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-      }
-    }
-
-    /* Skip to content link */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      padding: 8px 16px;
-      background: #1e40af;
-      color: white;
-      z-index: 100;
-      transition: top 0.2s;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
   </style>
   <script>
     // Check for saved theme preference or system preference
@@ -188,8 +121,6 @@
 <body
   class="text-center p-4 sm:p-6 min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-gray-50 dark:from-gray-900 dark:via-gray-900 dark:to-black transition-colors duration-500">
 
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
   <!-- Theme Toggle Button -->
   <button onclick="toggleTheme()"
     class="absolute top-4 right-4 p-2 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white/80 dark:hover:bg-gray-700/80 backdrop-blur-sm shadow-md transition-all duration-300 z-50 group"
@@ -201,13 +132,13 @@
   </button>
 
   <!-- Container -->
-  <main id="main-content"
+  <div
     class="max-w-lg mx-auto bg-white/70 dark:bg-gray-800/60 backdrop-blur-xl rounded-xl shadow-xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 p-6 sm:p-8 fade-in transition-colors duration-500 border border-white/20 dark:border-gray-700/30">
     <!-- Profile Picture -->
     <div class="mb-4">
       <img
         class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-gray-200 dark:border-gray-700 shadow-lg profile-hover"
-        src="engates1x1.png" alt="John Engates, AI researcher and former Cloudflare Field CTO" loading="eager" width="128" height="128" />
+        src="engates1x1.png" alt="John Engates, AI researcher and former Cloudflare Field CTO" loading="eager" />
     </div>
     <!-- Name -->
     <h1 class="text-2xl font-bold mb-4 fade-in-delay text-gray-900 dark:text-white">John Engates</h1>
@@ -219,7 +150,7 @@
       </p>
     </div>
     <!-- Links -->
-    <nav aria-label="Social links and navigation" class="space-y-3 sm:space-y-4 fade-in-delay">
+    <div class="space-y-3 sm:space-y-4 fade-in-delay">
       <a href="https://www.linkedin.com/in/jengates/"
         class="block w-full py-3 text-lg text-white bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 rounded-md flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
         target="_blank" rel="noopener noreferrer" aria-label="Connect with John Engates on LinkedIn"><i
@@ -236,13 +167,13 @@
         class="block w-full py-3 text-lg text-white bg-purple-600 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-700 rounded-md flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
         aria-label="Learn more about John Engates' current work and research"><i class="fas fa-flask mr-2"
           aria-hidden="true"></i>What I'm Working On →</a>
-    </nav>
+    </div>
 
     <!-- Footer -->
     <footer class="mt-6 text-xs text-gray-400 dark:text-gray-500">
       San Antonio, TX
     </footer>
-  </main>
+  </div>
 </body>
 
 </html>
