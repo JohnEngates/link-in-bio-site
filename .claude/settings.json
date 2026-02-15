@@ -1,0 +1,6 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "printf '\\033[35m[\\033[36m🌐\\033[35m bio-site\\033[0m]'"
+  }
+}

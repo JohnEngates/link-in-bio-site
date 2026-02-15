@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /agents/
+
+Sitemap: https://bio.johnengates.com/sitemap.xml

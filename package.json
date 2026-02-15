@@ -4,6 +4,7 @@
   "description": "A clean, professional link-in-bio website for John Engates, featuring his work in AI research and multi-agent systems.",
   "main": "index.js",
   "scripts": {
+    "generate:markdown": "node scripts/generate-markdown.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
