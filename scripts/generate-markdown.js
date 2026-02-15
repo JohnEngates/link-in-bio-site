@@ -198,10 +198,13 @@ function generate() {
     '',
   ];
 
-  const outDir = path.join(__dirname, '..', 'agents');
+  const rootDir = path.join(__dirname, '..');
+  const outDir = path.join(rootDir, 'agents');
+  const content = lines.join('\n');
   fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(path.join(outDir, 'index.md'), lines.join('\n'));
-  console.log(`Generated agents/index.md at ${now}`);
+  fs.writeFileSync(path.join(outDir, 'index.md'), content);
+  fs.writeFileSync(path.join(rootDir, 'llms-full.txt'), content);
+  console.log(`Generated agents/index.md and llms-full.txt at ${now}`);
 }
 
 generate();

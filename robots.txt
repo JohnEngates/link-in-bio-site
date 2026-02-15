@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /agents/
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 Sitemap: https://bio.johnengates.com/sitemap.xml

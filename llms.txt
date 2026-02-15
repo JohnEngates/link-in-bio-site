@@ -1,0 +1,16 @@
+# John Engates
+
+> AI researcher, technology leader, and board director. Former CTO at Rackspace, NTT, and Cloudflare. Now building multi-agent AI systems. Based in San Antonio, TX.
+
+- [Full profile (markdown)](https://bio.johnengates.com/agents/index.md): Structured bio, career, current roles, expertise, and links to articles, talks, projects, and press coverage
+- [Main site](https://engateshome.jengates.workers.dev): Full website with speaking, media, advisory, projects, and blog
+- [Bio page](https://bio.johnengates.com/bio.html): Detailed biography with speaker bio and headshot download
+- [LinkedIn](https://www.linkedin.com/in/jengates/): Professional profile
+- [GitHub](https://github.com/JohnEngates): Open source projects
+- [X](https://x.com/jengates): Posts on AI, agents, and technology
+
+## Optional
+
+- [Frost Bank board profile](https://www.frostbank.com/leadership/john-engates): Board director bio
+- [Podcast history](https://podcastdetails.com/people?q=John+Engates): Complete podcast appearance list
+- [OpenStack origins](https://docs.openstack.org/project-team-guide/introduction.html): History of OpenStack, which John co-founded
