@@ -3,9 +3,14 @@
 > Personal link-in-bio site for John Engates -- AI researcher, technology leader, and board director based in San Antonio, TX.
 
 - **Source**: [https://bio.johnengates.com](https://bio.johnengates.com)
-- **Generated**: 2026-02-15T20:37:26.524Z
+- **Full site**: [https://engateshome.jengates.workers.dev](https://engateshome.jengates.workers.dev)
+- **Generated**: 2026-02-15T23:30:57.163Z
 
 ---
+
+## About
+
+Former CTO roles at Rackspace (18 years), NTT, and Cloudflare. Engineered the cloud foundation hosted at Rackspace that powered YouTube's early growth, called to the White House to advise on rescuing Healthcare.gov during its critical launch crisis, and co-founded OpenStack. Now building multi-agent AI systems that solve problems single agents can't.
 
 ## Connect
 
@@ -19,7 +24,7 @@
 - Agentic AI
 - Multi-Agent Systems
 - Cyber Security
-- Quantum Computing
+- Quantum Computing and Post-Quantum Cryptography
 - Edge Computing
 
 ## Current Focus
@@ -40,8 +45,74 @@
 ## Career
 
 - **Field CTO**, Cloudflare (2021-2025)
+- **CTO**, NTT (2018-2020)
 - **CTO & VP Operations**, Rackspace (2000-2018)
 - **Co-founder**, Internet Direct (1995-2000)
+
+---
+
+## Articles & Publications
+
+- [The Stakes and Stages of Post-Quantum Zero Trust](https://blog.cloudflare.com/post-quantum-zero-trust/) -- Cloudflare Blog (2024)
+- [The Internet is at Risk Without Proper Control Over Web Scraping](https://www.thehindu.com/sci-tech/technology/the-internet-is-at-risk-without-proper-control-over-web-scraping-cloudflare-top-exec/article68917366.ece) -- The Hindu (2024)
+- [Why Your Cloud Security Strategy May Be Obsolete by 2025](https://www.tahawultech.com/features/why-your-cloud-security-strategy-may-be-obsolete-by-2025-and-what-to-do-about-it/) -- Tahawul Tech (2024)
+- [The Last Frontier of Cloud Transformation](https://partners.wsj.com/cloudflare/the-need-for-a-new-kind-of-cloud/the-last-frontier-of-cloud-transformation/) -- Wall Street Journal (2023)
+- [5 Strategies for CIO Success in 2023](https://enterprisersproject.com/article/2023/1/5-strategies-cio-success-2023) -- The Enterprisers Project (2023)
+- [The Rise of Chief Zero Trust Officer](https://www.intelligentcio.com/north-america/2023/01/03/the-rise-of-chief-zero-trust-officer/) -- Intelligent CIO (2023)
+- [APIs: Understanding the Business Benefits and Risks](https://sloanreview.mit.edu/sponsors-content/apis-understanding-the-business-benefits-and-risks/) -- MIT Sloan Management Review
+- [Five Great (free!) Ways to Get Started With Cloudflare](https://blog.cloudflare.com/five-free-ways-to-get-started-with-cloudflare/) -- Cloudflare Blog (2021)
+- [Smartphone security's dirty little secret](https://www.bbc.com/news/business-17222816) -- BBC (2012)
+
+## Interviews
+
+- [CIO Influence Interview -- Field CTO at Cloudflare](https://cioinfluence.com/cloud/cio-influence-interview-with-john-engates-field-chief-technology-officer-at-cloudflare/) -- CIO Influence (2023)
+- [PBS NewsHour -- Healthcare.gov expert commentary](https://www.pbs.org/newshour/show/will-there-be-more-complications-to-the-health-care-website) -- PBS (2013)
+
+## Speaking & Podcasts
+
+- [Cloudflare TV Security Week -- Post-Quantum Cryptography](https://cloudflare.tv/shows/security-week/secure-your-future-upgrade-to-post-quantum-cryptography-with-zero-trust/AZEB3Gg6) (2025)
+- [Software in Blue Podcast, Ep 38](https://www.softwareinblue.com/episode38/) (2025)
+- [TechStrong TV -- Connectivity Cloud Transformation](https://techstrong.tv/videos/the-last-great-cloud-transformation/connectivity-cloud-the-last-great-cloud-transformation-ep1) (2024)
+- [Cloudflare TV -- CTO Perspectives on Cyber Threats](https://cloudflare.tv/this-week-in-net/cto-perspectives-on-the-cyber-threat-landscape/8aqKG6gW) (2024)
+- [Cloud Control Podcast -- Internet Infrastructure (Spotify)](https://open.spotify.com/episode/5dEjCzcn27kiuxOnLr76JE) (2023)
+- [InsideDT Podcast, Ep 25 -- AI & Enterprise Cybersecurity](https://podcasts.apple.com/be/podcast/s1-e25-cloudflares-john-engates-the-impact-of-ai/id1657857948?i=1000624747816) (2023)
+- [alphalist CTO Podcast, Ep 75 -- AI and DevOps](https://alphalist.com/podcast/75-john-engates-field-cto-cloudflare) (2023)
+- [Potsdam Conference for National Cybersecurity -- Keynote](https://hpi.de/fileadmin/user_upload/060_News/2023/10-Jahre-Potsdamer-Konferenz-fuer-Nationale-CyberSicherheit/230413_Tagungsunterlagen_Sicherheitskonferenz_innen_DE_web.pdf) (2023)
+- [This Week in Enterprise Tech, Ep 530 -- Passwordless Auth](https://twit.tv/shows/this-week-in-enterprise-tech/episodes/530) (2023)
+- [Cloudflare TV -- Log4j Incident Response](https://cloudflare.tv/event/behind-the-scenes-incident-response-at-cloudflare/PZ5GzMv2) (2022)
+- [Cloud Talk Podcast -- Zero Trust Implementation](https://www.rackspace.com/solve/zero-trust-everywhere) (2022)
+- [ISSA International Conference -- Keynote](https://issa.org/event/secure-your-future-internet-native-architecture-helps-you-transform-your-business-faster/) (2022)
+- [Congressional Testimony -- House Oversight Committee on Cloud](https://oversight.house.gov/hearing/oversight-it-subcommittee-committee-to-examine-cloud-solutions/) (2015)
+- [GigaOM Structure 2013 Conference](https://www.youtube.com/watch?v=W5M8yt5gCw0&list=PLCLrzcAZ57SXu-5Gv03Zo4X7YtnQLmri5&index=7) (2013)
+- [FutureStack13 Keynote (with Steve Wozniak)](https://newrelic.com/de/press-releases/20130716) (2013)
+
+## Healthcare.gov Crisis Coverage (2013)
+
+John was called to the White House to advise on rescuing Healthcare.gov during its critical launch crisis. Coverage from major outlets:
+
+- [The Inside Scoop on How Healthcare.gov is Getting Fixed](https://www.infoworld.com/article/2171830/the-inside-scoop-on-how-healthcare-gov-is-getting-fixed.html) -- InfoWorld
+- [White House Woos Healthcare.gov Critic with Private Briefing](https://www.cbsnews.com/news/white-house-woos-healthcaregov-critic-with-private-briefing/) -- CBS News
+- [The Key Test for Healthcare.gov is the Part You Can't See](https://www.npr.org/sections/alltechconsidered/2013/12/01/248078217/the-key-test-for-healthcare-gov-is-the-part-you-cant-see) -- NPR
+- [The Healthcare.gov Tech Surge is Racing Against the Clock](https://www.npr.org/sections/alltechconsidered/2013/10/22/239220962/the-healthcare-gov-tech-surge-is-racing-against-the-clock) -- NPR
+- [Tech Experts Say Health Care Site Needs utilization Overhaul](https://www.usatoday.com/story/news/politics/2013/11/27/tech-experts-health-care-site/3771901/) -- USA Today
+- [Rackspace CTO Engates Analyzes Healthcare.gov Meltdown](https://www.informationweek.com/machine-learning-ai/rackspace-cto-engates-analyzes-healthcare-gov-meltdown) -- InformationWeek
+
+## Projects
+
+- **Post Quantum Cryptography Checker** -- Scan URLs for quantum-vulnerable cryptography | [GitHub](https://github.com/JohnEngates/check-pqc) | [Live](https://checkpqc.com)
+- **Post Quantum Readiness Assessment** -- Survey tool for organizational PQC preparedness | [GitHub](https://github.com/JohnEngates/pqcsurvey)
+- **Daikin AC Control CLI** -- Python CLI for Daikin air conditioning control | [GitHub](https://github.com/JohnEngates/daikin-ac-control)
+- **Tempest Game** -- Browser-based vector graphics arcade game | [GitHub](https://github.com/JohnEngates/tempest-game)
+- **Spotify Playlist Importer** -- Automate playlist creation and management | [GitHub](https://github.com/JohnEngates/spotify-playlist-importer)
+- **Temperature Grapher** -- Collect and visualize sensor temperature data | [GitHub](https://github.com/JohnEngates/temperature-graphing-script)
+
+## Recognition & References
+
+- [Frost Bank Board Profile](https://www.frostbank.com/leadership/john-engates)
+- [SABJ Tech Flash Titans Award (2014)](https://www.bizjournals.com/sanantonio/blog/2014/11/sabjs-inaugural-tech-flash-titans-award-winners.html)
+- [Edward Engates Memorial Scholarship at UTSA](https://utsa.academicworks.com/opportunities/11431)
+- [OpenStack History & Origins](https://docs.openstack.org/project-team-guide/introduction.html)
+- [Complete Podcast Appearance History](https://podcastdetails.com/people?q=John+Engates)
 
 ## Contact
 
