@@ -1,6 +1,6 @@
 /* johnengates.com
    Shares its type, spacing, grid and row language with exagentica.ai
-   (see that repo's design.md). What differs here: a warm amber accent in
+   (see that repo's design.md). What differs here: a coral accent in
    place of the lab's teal, a light theme, and photography. The lab's teal
    appears only where this site points at the lab (--lab). */
 
@@ -14,8 +14,8 @@
   --text: #edf0eb;
   --text-m: #b4c1c7;
   --text-s: #a2b3ba;
-  --accent: #e6b673;
-  --accent-line: #7d6645;
+  --accent: #f4906c;
+  --accent-line: #8a5443;
   --lab: #91d5ce;
   --panel: rgba(15, 24, 30, 0.65);
   --nav-bg: rgba(11, 17, 21, 0.82);
@@ -29,20 +29,20 @@
 }
 :root[data-theme='light'] {
   color-scheme: light;
-  --bg: #f7f5ef;
-  --bg2: #efece4;
-  --bg3: #e6e2d8;
-  --border: #d6d1c4;
-  --border-h: #a39d8d;
+  --bg: #f6f7f8;
+  --bg2: #eceef0;
+  --bg3: #e1e5e8;
+  --border: #d3d9dd;
+  --border-h: #98a4ab;
   --text: #131b20;
   --text-m: #46535a;
   --text-s: #5c686e;
-  --accent: #96580f;
-  --accent-line: #c9a875;
+  --accent: #c0441a;
+  --accent-line: #e3a892;
   --lab: #1c6f68;
   --panel: rgba(255, 255, 255, 0.55);
-  --nav-bg: rgba(247, 245, 239, 0.88);
-  --photo-border: #cfc9ba;
+  --nav-bg: rgba(246, 247, 248, 0.88);
+  --photo-border: #c9d0d5;
 }
 
 *,

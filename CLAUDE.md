@@ -43,7 +43,7 @@ The site shares exAgentica's system: charcoal `#0b1115` background, Inter for te
 
 What differs here, on purpose:
 
-- Accent is warm amber (`--accent`: `#e6b673` dark, `#96580f` light) where the lab uses teal.
+- Accent is coral (`--accent`: `#f4906c` dark, `#c0441a` light) where the lab uses teal. It picks up the orange in the portrait.
 - The lab's teal (`--lab`) appears only on links that point to exAgentica.
 - A light theme exists (`:root[data-theme='light']`). Dark is the default; the choice is stored in `localStorage` under `theme`.
 - Photography is used throughout. The lab's aurora and particle field are not.
