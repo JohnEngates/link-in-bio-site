@@ -1,0 +1,274 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Photo from '../components/Photo.astro';
+import PressKit from '../components/PressKit.astro';
+import Contact from '../components/Contact.astro';
+import { topics, appearances, podcastHistory } from '../data/speaking';
+import gigaom from '../assets/photos/gigaom-speaking.jpg';
+import potsdam from '../assets/photos/potsdam-speaking.jpg';
+import latam from '../assets/photos/latam-ciso-panel.jpg';
+import chicago from '../assets/photos/cloudflare-immerse-chicago-2.jpg';
+import houston from '../assets/photos/cloudflare-immerse-houston.jpg';
+import ais from '../assets/photos/ais-2012-speaking.jpg';
+import nyse from '../assets/photos/nyse-bell-ringing-1.jpg';
+import cnn from '../assets/photos/cnn-healthcare-interview.jpg';
+import whitehouse from '../assets/photos/whitehouse-3.jpg';
+import sitroom from '../assets/photos/whitehouse-2.jpg';
+import woz from '../assets/photos/wozniak-newrelic.jpg';
+import tbl from '../assets/photos/cloudflare-first-conference.jpg';
+import techstrong from '../assets/photos/techstrong-tv-2024.jpg';
+import congress from '../assets/photos/congressional-testimony.jpg';
+
+// Photos shown under a given appearance, keyed by its title.
+const photos: Record<string, { src: ImageMetadata; alt: string; caption: string }[]> = {
+  'Cloudflare Immerse Houston': [
+    {
+      src: houston,
+      alt: 'A ballroom audience at round tables watching a presentation at Cloudflare Immerse Houston',
+      caption: 'Cloudflare Immerse Houston.',
+    },
+  ],
+  'Cloudflare Immerse Chicago': [
+    {
+      src: chicago,
+      alt: 'A full ballroom of attendees watching a speaker on stage at Cloudflare Immerse Chicago',
+      caption: 'Cloudflare Immerse Chicago.',
+    },
+  ],
+  'The Last Great Cloud Transformation': [
+    {
+      src: techstrong,
+      alt: 'Three-way video panel on Techstrong TV with Alan Shimel, John Engates, and Mitch Ashley',
+      caption: 'On Techstrong TV with Alan Shimel and Mitch Ashley.',
+    },
+  ],
+  'LATAM CISO Summit': [
+    {
+      src: latam,
+      alt: 'John Engates moderating a five-person panel on stage at the LATAM CISO Summit',
+      caption: 'Moderating at the LATAM CISO Summit, Costa Rica.',
+    },
+  ],
+  'Potsdam Conference for National Cybersecurity': [
+    {
+      src: potsdam,
+      alt: 'John Engates presenting at a lectern at the Hasso Plattner Institute',
+      caption: 'Keynote at the Hasso Plattner Institute, Potsdam.',
+    },
+  ],
+  'The State of the Cloud': [
+    {
+      src: congress,
+      alt: 'John Engates seated at a witness table speaking into a microphone',
+      caption: 'Testifying at the field hearing at UTSA.',
+    },
+  ],
+  'NYSE Closing Bell': [
+    {
+      src: nyse,
+      alt: 'The Rackspace team applauding on the New York Stock Exchange podium at the closing bell',
+      caption: 'Closing bell at the NYSE, May 6, 2015.',
+    },
+  ],
+  'White House meeting on Healthcare.gov': [
+    {
+      src: whitehouse,
+      alt: 'John Engates standing outside the West Wing entrance of the White House',
+      caption: 'Outside the West Wing, November 25, 2013.',
+    },
+    {
+      src: sitroom,
+      alt: 'A wall display reading White House Situation Room, Small Conference Room, dated Monday November 25',
+      caption: 'The room schedule that morning.',
+    },
+  ],
+  FutureStack13: [
+    {
+      src: woz,
+      alt: 'John Engates with Steve Wozniak',
+      caption: 'With Steve Wozniak at FutureStack13.',
+    },
+  ],
+  'LSI Accelerating Innovation Summit': [
+    {
+      src: ais,
+      alt: 'A conference screen announcing keynote speaker John Engates, Chief Technology Officer, Rackspace, at AIS 2012',
+      caption: 'Keynote billing at AIS 2012.',
+    },
+  ],
+};
+const tall = new Set([whitehouse, sitroom]);
+---
+
+<Base
+  title="Speaking | John Engates"
+  description="John Engates speaks about AI agents, cybersecurity, and what boards need to ask about both. Topics, past keynotes, podcasts, and broadcast appearances."
+>
+  <section class="wrap page-header">
+    <p class="eyebrow">Speaking</p>
+    <h1>I explain hard technology to the people who have to decide about it.</h1>
+    <p class="section-dek">
+      Keynotes, panels, podcasts, and executive briefings on AI agents,
+      cybersecurity, and the infrastructure underneath. I’ve done this for
+      conference audiences, for boards, for Congress, and at the White House.
+    </p>
+    <Photo
+      src={gigaom}
+      alt="John Engates speaking at a podium on stage at GigaOM Structure"
+      caption="GigaOM Structure, San Francisco, 2013."
+      class="photo-lead"
+      width={1600}
+      sizes="(max-width: 700px) 100vw, 1120px"
+      eager
+    />
+  </section>
+
+  <section class="section wrap" aria-labelledby="topics">
+    <SectionHead eyebrow="01 / Topics" title="What I talk about" id="topics" />
+    <p class="section-dek">
+      Each of these can be a keynote, a fireside conversation, or a working
+      session with a leadership team or board.
+    </p>
+    <div class="card-grid">
+      {
+        topics.map((t, i) => (
+          <article class="card">
+            <span class="small-meta">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{t.title}</h3>
+            <p>{t.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="kit-head">
+    <SectionHead
+      eyebrow="02 / For organizers"
+      title="Bio and headshot"
+      id="kit-head"
+    />
+    <PressKit />
+  </section>
+
+  <section class="section wrap" aria-labelledby="appearances">
+    <SectionHead
+      eyebrow="03 / Appearances"
+      title="Where I’ve spoken"
+      id="appearances"
+    />
+    <p class="section-dek">
+      A selection, newest first. There are more podcast conversations in the{' '}
+      <a class="inline-link" href={podcastHistory}>full podcast history</a>.
+    </p>
+    {
+      appearances.map((group) => (
+        <>
+          <div class="year-head">
+            <h3>{group.year}</h3>
+          </div>
+          <ol class="rows">
+            {group.items.map((a) => (
+              <li>
+                <div class="row">
+                  <span>
+                    <span class={`badge ${a.kind === 'Keynote' || a.kind === 'Testimony' ? 'accent' : ''}`}>
+                      {a.kind}
+                    </span>
+                  </span>
+                  <div>
+                    <h3>{a.title}</h3>
+                    <p class="context">{a.context}</p>
+                    <p>{a.text}</p>
+                    {a.url && (
+                      <a href={a.url} class="text-link">
+                        {a.linkLabel} <span>↗</span>
+                      </a>
+                    )}
+                    {photos[a.title] && (
+                      <div
+                        class={`row-photos ${photos[a.title].length === 1 ? 'one' : ''}`}
+                      >
+                        {photos[a.title].map((ph) => (
+                          <Photo
+                            src={ph.src}
+                            alt={ph.alt}
+                            caption={ph.caption}
+                            class={tall.has(ph.src) ? 'tall' : 'crop'}
+                            sizes="(max-width: 700px) 100vw, 345px"
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </>
+      ))
+    }
+    <div class="year-head">
+      <h3>Earlier</h3>
+    </div>
+    <ol class="rows">
+      <li>
+        <div class="row">
+          <span><span class="badge">Event</span></span>
+          <div>
+            <h3>Cloudflare’s first customer conference</h3>
+            <p class="context">Cloudflare Internet Summit</p>
+            <p>
+              Before I joined the company, I spoke at Cloudflare’s first
+              customer conference as Rackspace CTO. Sir Tim Berners-Lee was on
+              the same program.
+            </p>
+            <div class="row-photos one">
+              <Photo
+                src={tbl}
+                alt="John Engates standing with Sir Tim Berners-Lee and Michelle Zatlyn"
+                caption="With Sir Tim Berners-Lee and Cloudflare co-founder Michelle Zatlyn."
+                class="crop"
+                sizes="(max-width: 700px) 100vw, 520px"
+              />
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="row">
+          <span><span class="badge">Broadcast</span></span>
+          <div>
+            <h3>Healthcare.gov on national news</h3>
+            <p class="context">CNN, PBS NewsHour, NPR, and others · 2013</p>
+            <p>
+              During the Healthcare.gov recovery I explained the technical
+              problems and the fix to national audiences. The coverage is listed
+              on the <a class="inline-link" href="/press/#healthcare">press page</a>.
+            </p>
+            <div class="row-photos one">
+              <Photo
+                src={cnn}
+                alt="John Engates in a split-screen live interview on CNN's The Lead about the Healthcare.gov deadline"
+                caption="Live on CNN during the Healthcare.gov recovery."
+                class="crop"
+                sizes="(max-width: 700px) 100vw, 520px"
+              />
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <Contact
+    eyebrow="04 / Booking"
+    title="Planning an event?"
+    subject="Speaking inquiry"
+  >
+    Tell me about the audience and what you want them to leave with. I’m
+    available for keynotes, panels, podcasts, and private briefings for
+    leadership teams and boards.
+  </Contact>
+</Base>

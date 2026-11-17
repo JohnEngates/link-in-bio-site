@@ -20,3 +20,7 @@ Thumbs.db
 # Aider files
 .aider*
 node_modules/
+
+# Astro
+dist/
+.astro/

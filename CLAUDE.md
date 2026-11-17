@@ -4,73 +4,57 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static personal website for John Engates, AI researcher and technology leader. It is a single-page long-scroll site with a dark minimalist aesthetic (claude-flow style), light/dark theme toggle, and no build process or backend requirements.
+johnengates.com is the personal and professional site for John Engates: background, career, boards, speaking, and press. It is the sibling of exagentica.ai (repo `JohnEngates/exAgentica`), his personal agentic AI lab. The lab holds current work and writing; this site holds credentials and history. The two share a design language and link to each other.
+
+It is a static Astro site with five pages, a dark default theme with a light toggle, and no backend.
 
 ## Development Commands
 
-Since this is a static website with no build process:
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # static build to dist/
+npm run preview  # serve the built site
+```
 
-- **Local Development**: Open `index.html` directly in a browser, or use any static file server:
-  ```bash
-  # Python 3
-  python3 -m http.server 8000
-
-  # Node.js (if http-server is installed globally)
-  http-server
-  ```
-
-- **Testing**: Manual testing in browser (no automated tests)
-- **Linting**: No linting configuration (pure HTML/CSS/JS)
-- **Building**: No build step required
+- **Node**: 22.19 or newer (see `.nvmrc`)
+- **Testing**: no automated tests. Build, then check pages in a browser at desktop and phone widths in both themes.
+- **Linting**: none configured
 
 ## Architecture
 
-Single-page site with three files:
+- `src/data/` is the single source of content. Edit facts here, not in pages.
+  - `site.ts`: name, links, contact email, nav, and the third-person bios used in the press kit
+  - `career.ts`: roles, milestones, recognition, education
+  - `boards.ts`: board seats, advisory roles, areas
+  - `speaking.ts`: topics and appearances by year
+  - `press.ts`: articles, interviews, Healthcare.gov coverage
+- `src/pages/`: `index`, `about`, `speaking`, `boards`, `press`, `404`. Each numbers its sections with an eyebrow like `01 / Background`.
+- `src/pages/*.ts` endpoints generate `robots.txt`, `llms.txt`, `llms-full.txt`, `agents/index.md`, and `John_Engates_Speaker_Bio.txt` from `src/data/` via `src/lib/markdown.ts`.
+- `src/layouts/Base.astro`: head, nav, footer, theme toggle, analytics.
+- `src/components/`: `SectionHead`, `Photo` (optimized image with caption), `PressKit` (bio copy and downloads), `Contact`.
+- `src/styles/global.css`: design tokens and all styles.
+- `src/assets/photos/`: photographs, optimized by Astro at build. Photos on About and Speaking are attached to a role or appearance by a map at the top of each page.
+- `public/`: files served unchanged. `engates_john.jpg` is the headshot download, `john.png` the social image, `engates1x1.png` the square portrait.
 
-1. **index.html** - Complete single-page site with sections:
-   - Fixed nav with anchor links (About, Career, Focus, Boards, Writing, Contact) and theme toggle
-   - Hero with profile photo, social links (LinkedIn, X, GitHub)
-   - About (full narrative bio + stats grid)
-   - Career (timeline: Independent, Cloudflare, NTT, Rackspace, Internet Direct)
-   - Current Focus (6 expertise cards: Agentic AI, Agentic Coding, Multi-Agent Systems, Local LLMs, Image Generation, Cybersecurity)
-   - Highlight quote
-   - Board Service (Frost Bank, James Avery, SIM SA, Techstars)
-   - Writing & Media (Cloudflare Blog, DevOps.com, Enterprisers Project, alphalist Podcast)
-   - Education
-   - Contact with headshot download + speaker bio modal
-   - Footer with Agent Markdown link
+## Design
 
-2. **styles.css** - Custom CSS with CSS variables for dark/light themes:
-   - Dark mode (default): `--color-bg: #0a0a0a`, blue accent `#4f8ff7`
-   - Light mode (`html.light`): `--color-bg: #fafafa`, blue accent `#2563eb`
-   - Fonts: Playfair Display (headings) + Inter (body) via Google Fonts
-   - 2-column section grid layout, timeline, expertise cards, responsive breakpoints
+The site shares exAgentica's system: charcoal `#0b1115` background, Inter for text, IBM Plex Mono for labels and dates, hairline rules, square rows, 1120px content width. See `design.md` in the exAgentica repo.
 
-3. **script.js** - Theme toggle, nav scroll effect, mobile menu, scroll animations, speaker bio modal (copy/download)
+What differs here, on purpose:
 
-## Key Technical Details
+- Accent is warm amber (`--accent`: `#e6b673` dark, `#96580f` light) where the lab uses teal.
+- The lab's teal (`--lab`) appears only on links that point to exAgentica.
+- A light theme exists (`:root[data-theme='light']`). Dark is the default; the choice is stored in `localStorage` under `theme`.
+- Photography is used throughout. The lab's aurora and particle field are not.
 
-- **Styling**: Custom CSS with CSS variables (no Tailwind, no build step)
-- **Icons**: Inline SVGs (no Font Awesome)
-- **Fonts**: Google Fonts (Inter + Playfair Display)
-- **Theme**: Dark default, light mode via `html.light` class, persisted in localStorage
-- **Images**: `engates1x1.png` (profile), `engates_john.jpg` (headshot download), `john.png` (OG image)
-- **Responsive**: CSS grid + media queries at 900px and 640px breakpoints
+## Copy rules
 
-## File References
-
-When modifying the site structure or styling:
-- Nav + theme toggle: `index.html:63-84`
-- Hero + social links: `index.html:87-112`
-- About section: `index.html:114-144`
-- Career timeline: `index.html:146-211`
-- Expertise cards: `index.html:213-276`
-- Board service: `index.html:288-320`
-- Writing & Media: `index.html:322-361`
-- Contact + headshot/speaker bio: `index.html:381-413`
-- Speaker bio modal: `index.html:422-439`
-- CSS variables: `styles.css:6-22` (dark) and `styles.css:24-36` (light)
+- First person, plain language, no promotional phrasing. No em dashes.
+- The speaker bio and short bio in `site.ts` are third person because organizers paste them as written.
+- Do not invent facts, numbers, or quotes. When sources disagree, ask John.
+- When Astro markup puts an inline tag on a new line after text, add `{' '}` or the space is dropped.
 
 ## Deployment
 
-This static site is deployed via Cloudflare Pages with automatic deployment on push to the main branch. It can also be deployed to any web server or static hosting service without modification.
+Cloudflare Pages deploys on push to `main`. Build command `npm run build`, output directory `dist`, `NODE_VERSION=22`. The site is served at johnengates.com and bio.johnengates.com; canonical URLs use johnengates.com (`site` in `astro.config.mjs`).

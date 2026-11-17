@@ -1,23 +1,22 @@
 {
-  "name": "link-in-bio-site",
-  "version": "1.0.0",
-  "description": "A clean, professional link-in-bio website for John Engates, featuring his work in AI research and multi-agent systems.",
-  "main": "index.js",
+  "name": "johnengates-com",
+  "type": "module",
+  "version": "2.0.0",
+  "private": true,
+  "description": "johnengates.com: personal and professional site for John Engates. Sibling to exagentica.ai.",
   "scripts": {
-    "generate:markdown": "node scripts/generate-markdown.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JohnEngates/link-in-bio-site.git"
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.2",
+    "sharp": "^0.35.4"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/JohnEngates/link-in-bio-site/issues"
-  },
-  "homepage": "https://github.com/JohnEngates/link-in-bio-site#readme",
-  "devDependencies": {}
+  "engines": {
+    "node": ">=22.19.0"
+  }
 }

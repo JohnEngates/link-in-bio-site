@@ -1,0 +1,28 @@
+---
+import { site } from '../data/site';
+interface Props {
+  eyebrow: string;
+  title?: string;
+  subject?: string;
+}
+const { eyebrow, title = 'Let’s talk.', subject } = Astro.props;
+const mailto = `mailto:${site.email}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}`;
+---
+
+<section class="section wrap contact-section last" id="contact">
+  <p class="eyebrow">{eyebrow}</p>
+  <h2>{title}</h2>
+  <p>
+    <slot>
+      I take on a small number of speaking engagements and advisory
+      conversations each year. If you are planning an event, working through AI
+      and cyber decisions on a board, or writing about either, I’d like to hear
+      from you.
+    </slot>
+  </p>
+  <div class="contact-links">
+    <a href={mailto} class="text-link">{site.email} <span>↗</span></a>
+    <a href={site.social.linkedin} class="text-link">LinkedIn <span>↗</span></a>
+    <a href={site.social.x} class="text-link">X <span>↗</span></a>
+  </div>
+</section>

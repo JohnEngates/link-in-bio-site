@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Contact from '../components/Contact.astro';
+import { boards, advisory, boardAreas } from '../data/boards';
+---
+
+<Base
+  title="Boards & advisory | John Engates"
+  description="John Engates serves on the boards of Cullen/Frost Bankers (NYSE: CFR), where he chairs the Technology and Cybersecurity Committee, and James Avery Artisan Jewelry."
+>
+  <section class="wrap page-header">
+    <p class="eyebrow">Boards & advisory</p>
+    <h1>An operator’s view of technology risk, in the boardroom.</h1>
+    <p class="section-dek">
+      I spent three decades running and securing infrastructure. On a board,
+      that experience turns into better questions about technology, cyber risk,
+      and now AI.
+    </p>
+  </section>
+
+  <section class="section wrap" aria-labelledby="current">
+    <SectionHead eyebrow="01 / Current boards" title="Board service" id="current" />
+    <div class="card-grid">
+      {
+        boards.map((b) => (
+          <article class="card board">
+            <span class="small-meta">{b.meta}</span>
+            <h3>{b.org}</h3>
+            <p class="role">{b.role}</p>
+            <p>{b.text}</p>
+            <ul>
+              {b.focus.map((f) => (
+                <li>{f}</li>
+              ))}
+            </ul>
+            <a href={b.url} class="text-link">
+              {b.linkLabel} <span>↗</span>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="advisory">
+    <SectionHead
+      eyebrow="02 / Advisory & community"
+      title="Mentoring, investing, and service"
+      id="advisory"
+    />
+    <ol class="rows">
+      {
+        advisory.map((a) => (
+          <li>
+            <div class="row">
+              <span class="small-meta">{a.meta}</span>
+              <div>
+                <h3>{a.url ? <a href={a.url}>{a.org}</a> : a.org}</h3>
+                <p class="org">{a.role}</p>
+                <p>{a.text}</p>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="section wrap" aria-labelledby="areas">
+    <SectionHead eyebrow="03 / What I bring" title="Where I’m useful" id="areas" />
+    <div class="card-grid">
+      {
+        boardAreas.map((a, i) => (
+          <article class="card">
+            <span class="small-meta">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{a.title}</h3>
+            <p>{a.text}</p>
+          </article>
+        ))
+      }
+    </div>
+    <div class="callout">
+      <p class="small-meta">Background</p>
+      <div>
+        <p>
+          My board work rests on operating experience: nearly 18 years at
+          Rackspace through its growth and IPO, client-facing CTO roles at NTT
+          and Cloudflare, a White House advisory role during the Healthcare.gov
+          recovery, and testimony before Congress on cloud computing.
+        </p>
+        <a href="/about/" class="text-link">Full background <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <Contact
+    eyebrow="04 / Contact"
+    title="Board and advisory inquiries"
+    subject="Board or advisory inquiry"
+  >
+    I’m selective about new roles and look for organizations where technology,
+    cybersecurity, or AI is central to the decisions ahead. If that describes
+    your board or company, I’d be glad to talk.
+  </Contact>
+</Base>

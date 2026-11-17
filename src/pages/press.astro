@@ -1,0 +1,136 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import PressKit from '../components/PressKit.astro';
+import Contact from '../components/Contact.astro';
+import { site } from '../data/site';
+import { articles, authorPages, coverage, healthcareGov, alsoCovered } from '../data/press';
+import type { PressItem } from '../data/press';
+
+const meta = (i: PressItem) => [i.source, i.date].filter(Boolean);
+---
+
+<Base
+  title="Writing & press | John Engates"
+  description="Articles by John Engates and press coverage, plus a press kit with bio and headshot."
+>
+  <section class="wrap page-header">
+    <p class="eyebrow">Writing & press</p>
+    <h1>What I’ve written, and what’s been written.</h1>
+    <p class="section-dek">
+      Articles under my name, interviews, and news coverage. My current writing
+      is at <a class="inline-link lab-link" href={site.fieldNotes}>Field Notes on exAgentica</a>.
+    </p>
+  </section>
+
+  <section class="section wrap" aria-labelledby="kit-head">
+    <SectionHead eyebrow="01 / Press kit" title="Bio and headshot" id="kit-head" />
+    <PressKit full />
+  </section>
+
+  <section class="section wrap" aria-labelledby="articles">
+    <SectionHead eyebrow="02 / Articles" title="Under my byline" id="articles" />
+    <ol class="rows">
+      {
+        articles.map((item) => (
+          <li>
+            <a class="row" href={item.url}>
+              <span class="small-meta">
+                {meta(item).map((m) => (
+                  <>
+                    {m}
+                    <br />
+                  </>
+                ))}
+                {item.note}
+              </span>
+              <div>
+                <h3>{item.title}</h3>
+                {item.text && <p>{item.text}</p>}
+              </div>
+              <span class="row-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+    <div class="callout">
+      <p class="small-meta">More</p>
+      <div>
+        <p>Author pages with everything I’ve published at each outlet.</p>
+        <div class="contact-links">
+          {
+            authorPages.map((a) => (
+              <a href={a.url} class="text-link">
+                {a.source} <span>↗</span>
+              </a>
+            ))
+          }
+          <a href={site.fieldNotes} class="text-link lab-link">
+            Field Notes <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="coverage">
+    <SectionHead eyebrow="03 / Interviews" title="Interviews, webinars, and coverage" id="coverage" />
+    <ol class="rows">
+      {
+        coverage.map((item) => (
+          <li>
+            <a class="row" href={item.url}>
+              <span class="small-meta">
+                {item.source}
+                <br />
+                {item.date}
+                {item.note && <br />}
+                {item.note}
+              </span>
+              <div>
+                <h3>{item.title}</h3>
+                {item.text && <p>{item.text}</p>}
+              </div>
+              <span class="row-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="section wrap" aria-labelledby="healthcare">
+    <SectionHead eyebrow="04 / 2013" title="The Healthcare.gov recovery" id="healthcare" />
+    <p class="section-dek">
+      When Healthcare.gov failed at launch, I was one of the outside technology
+      leaders brought in to review the fix, and reporters asked me to explain
+      what was going wrong. I also appeared on or was quoted by{' '}
+      {alsoCovered.slice(0, -1).join(', ')}, and {alsoCovered.at(-1)}.
+    </p>
+    <ol class="rows compact">
+      {
+        healthcareGov.map((item) => (
+          <li>
+            <a class="row" href={item.url}>
+              <span class="small-meta">
+                {item.source}
+                <br />
+                {item.date}
+              </span>
+              <div>
+                <h3>{item.title}</h3>
+              </div>
+              <span class="row-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <Contact eyebrow="05 / Media inquiries" title="Writing a story?" subject="Media inquiry">
+    I’m glad to talk with reporters and analysts about AI agents, cybersecurity,
+    and Internet infrastructure, on the record or on background.
+  </Contact>
+</Base>

@@ -1,42 +1,41 @@
-# link-in-bio-site
+# johnengates.com
 
-A clean, professional link-in-bio website for John Engates, featuring his work in AI research and multi-agent systems.
+Personal and professional site for John Engates: background, career, boards,
+speaking, and press. It is the sibling of [exagentica.ai](https://exagentica.ai),
+which holds current work and writing.
 
-## Overview
+## Develop
 
-This static website serves as a central hub for John's online presence, providing:
-- Quick bio focused on current AI research
-- Links to social profiles (LinkedIn, X, GitHub)
-- Full narrative biography with career highlights
-- Speaker bio for conferences and events
-- Professional headshot downloads
-
-## Features
-
-- **Responsive Design**: Optimized for both mobile and desktop viewing
-- **Fast Loading**: Static HTML with CDN-hosted dependencies
-- **Accessibility**: ARIA labels and semantic HTML
-- **Analytics**: Google Analytics integration for visitor insights
-- **SEO Optimized**: Meta tags and Open Graph data for social sharing
-
-## Tech Stack
-
-- HTML5
-- Tailwind CSS (via CDN)
-- Font Awesome icons (via CDN)
-- Vanilla JavaScript (for modal functionality)
-- Deployed on Cloudflare Pages
-
-## Local Development
-
-To run locally, simply open `index.html` in a browser or use a local server:
+Requires Node 22.19 or newer.
 
 ```bash
-python3 -m http.server 8000
+npm install
 ```
 
-Then visit `http://localhost:8000`
+```bash
+npm run dev
+```
 
-## Deployment
+```bash
+npm run build
+```
 
-The site automatically deploys to Cloudflare Pages when changes are pushed to the main branch on GitHub.
+The build writes a static site to `dist/`.
+
+## Deploy
+
+Cloudflare Pages, on push to `main`. The project needs these build settings:
+
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Environment variable: `NODE_VERSION` = `22`
+
+## Where things live
+
+- `src/data/` holds all content: career, boards, speaking, press, bios. Pages,
+  `llms.txt`, `llms-full.txt`, `agents/index.md` and the speaker bio download
+  are all generated from it.
+- `src/pages/` has one file per page.
+- `src/styles/global.css` has the design tokens and all styles.
+- `src/assets/photos/` holds photographs, optimized at build time.
+- `public/` holds files served as they are, including the headshot download.

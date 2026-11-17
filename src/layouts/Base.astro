@@ -1,0 +1,205 @@
+---
+import '../styles/global.css';
+import { site, nav } from '../data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  noindex?: boolean;
+}
+const {
+  title,
+  description = site.description,
+  ogImage = '/john.png',
+  noindex = false,
+} = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(ogImage, Astro.site);
+const path = Astro.url.pathname;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': 'https://exagentica.ai/#john',
+      name: site.name,
+      url: site.url + '/',
+      image: new URL('/engates1x1.png', Astro.site).href,
+      jobTitle: 'Technologist and board director',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'San Antonio',
+        addressRegion: 'TX',
+        addressCountry: 'US',
+      },
+      alumniOf: 'University of Texas at San Antonio',
+      sameAs: [
+        site.social.linkedin,
+        site.social.x,
+        site.social.github,
+        site.lab,
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': site.url + '/#website',
+      name: site.name,
+      url: site.url + '/',
+      description: site.description,
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1115" />
+    <!-- Dark is the default. A saved choice wins; set before first paint. -->
+    <script is:inline>
+      try {
+        if (localStorage.getItem('theme') === 'light')
+          document.documentElement.dataset.theme = 'light';
+      } catch {}
+    </script>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content={site.name} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@jengates" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageURL} />
+    <link
+      rel="alternate"
+      type="text/markdown"
+      href="/agents/index.md"
+      title="Agent-readable markdown"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(schema).replace(/</g, '\\u003c')}
+    />
+    <!-- Google Analytics (GA4). Loads only on johnengates.com hosts, so local
+         previews and branch previews stay out of the reports. -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      if (/(^|\.)johnengates\.com$/.test(location.hostname)) {
+        const tag = document.createElement('script');
+        tag.async = true;
+        tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-NJXVGK8SHM';
+        document.head.append(tag);
+        gtag('js', new Date());
+        gtag('config', 'G-NJXVGK8SHM');
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="nav">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo" aria-label="John Engates home">
+          John <span>Engates</span>
+        </a>
+        <div class="nav-right">
+          <nav aria-label="Main navigation">
+            <ul class="nav-links">
+              {
+                nav.map(({ href, label }) => (
+                  <li>
+                    <a
+                      href={href}
+                      aria-current={path.startsWith(href) ? 'page' : undefined}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))
+              }
+              <li class="lab-nav">
+                <a href={site.lab}>exAgentica lab ↗</a>
+              </li>
+            </ul>
+          </nav>
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch between dark and light theme"
+          >
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"
+              ><circle cx="12" cy="12" r="4"></circle><path
+                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+              ></path></svg
+            >
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"
+              ><path d="M20.5 13.5A8.5 8.5 0 1 1 10.5 3.5a6.5 6.5 0 0 0 10 10z"
+              ></path></svg
+            >
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <a href="/" class="footer-logo">John <span>Engates</span></a>
+          <p class="footer-copy">
+            Technologist, board director, independent AI researcher.
+            <br />© {new Date().getFullYear()} John Engates · San Antonio, Texas
+          </p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <ul class="footer-links">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/speaking/">Speaking</a></li>
+            <li><a href="/boards/">Boards</a></li>
+            <li><a href="/press/">Press</a></li>
+            <li><a href="/press/#kit">Press kit</a></li>
+            <li><a href={site.lab} class="lab-link">exAgentica ↗</a></li>
+            <li><a href={site.social.linkedin}>LinkedIn ↗</a></li>
+            <li><a href={site.social.x}>X ↗</a></li>
+            <li><a href={site.social.github}>GitHub ↗</a></li>
+            <li><a href="/agents/index.md">Agent Markdown</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script is:inline>
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        const root = document.documentElement;
+        const light = root.dataset.theme !== 'light';
+        if (light) root.dataset.theme = 'light';
+        else delete root.dataset.theme;
+        try {
+          localStorage.setItem('theme', light ? 'light' : 'dark');
+        } catch {}
+      });
+    </script>
+  </body>
+</html>

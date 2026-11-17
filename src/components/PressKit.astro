@@ -1,0 +1,74 @@
+---
+import { site, shortBio, speakerBio } from '../data/site';
+interface Props {
+  full?: boolean;
+}
+const { full = false } = Astro.props;
+---
+
+<div class="callout" id="kit">
+  <p class="small-meta">Press kit</p>
+  <div>
+    <p class="large-copy">
+      Bio and headshot for programs, introductions, and articles.
+    </p>
+    {
+      full ? (
+        <div class="bio-text" id="speaker-bio">
+          <p class="eyebrow">Speaker bio</p>
+          {speakerBio.map((p) => (
+            <p>{p}</p>
+          ))}
+        </div>
+      ) : (
+        <p style="margin-top:10px">{shortBio}</p>
+      )
+    }
+    <div class="btn-row">
+      <button class="btn" type="button" data-copy-bio>
+        <svg viewBox="0 0 24 24" aria-hidden="true"
+          ><rect x="9" y="9" width="11" height="11" rx="1"></rect><path
+            d="M5 15V5a1 1 0 0 1 1-1h10"></path></svg
+        >
+        Copy {full ? 'speaker bio' : 'short bio'}
+      </button>
+      <a class="btn" href={site.bioFile} download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"
+          ><path d="M12 4v11M7 11l5 5 5-5M5 20h14"></path></svg
+        >
+        Bio (.txt)
+      </a>
+      <a class="btn" href={site.headshot} download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"
+          ><path d="M12 4v11M7 11l5 5 5-5M5 20h14"></path></svg
+        >
+        Headshot (.jpg)
+      </a>
+      <span class="copy-status" role="status" aria-live="polite"></span>
+    </div>
+    {
+      !full && (
+        <a href="/press/#kit" class="text-link">
+          Full press kit <span>→</span>
+        </a>
+      )
+    }
+  </div>
+</div>
+<script
+  is:inline
+  define:vars={{ text: full ? speakerBio.join('\n\n') : shortBio }}
+>
+  document.querySelectorAll('[data-copy-bio]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const status = button.parentElement.querySelector('.copy-status');
+      try {
+        await navigator.clipboard.writeText(text);
+        status.textContent = 'Copied';
+      } catch {
+        status.textContent = 'Copy failed. Use the .txt download.';
+      }
+      setTimeout(() => (status.textContent = ''), 2500);
+    });
+  });
+</script>

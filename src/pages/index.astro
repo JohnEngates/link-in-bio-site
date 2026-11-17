@@ -1,0 +1,284 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Photo from '../components/Photo.astro';
+import PressKit from '../components/PressKit.astro';
+import Contact from '../components/Contact.astro';
+import { site } from '../data/site';
+import { career } from '../data/career';
+import { boards } from '../data/boards';
+import { topics } from '../data/speaking';
+import { articles, coverage } from '../data/press';
+import portrait from '../assets/photos/portrait.png';
+import gigaom from '../assets/photos/gigaom-speaking.jpg';
+import potsdam from '../assets/photos/potsdam-speaking.jpg';
+import latam from '../assets/photos/latam-ciso-panel.jpg';
+import ipo from '../assets/photos/rackspace-ipo.jpg';
+
+const selectedPress = [articles[0], coverage[0], articles[2], articles[3]];
+---
+
+<Base title="John Engates | Technologist, board director, AI researcher">
+  <section class="hero wrap">
+    <p class="eyebrow">Technologist · Board director · Speaker</p>
+    <h1>
+      Three decades building Internet infrastructure. Now{' '}
+      <span>AI agents</span>, <span>security</span>, and the{' '}
+      <span>boardroom</span>.
+    </h1>
+    <div class="hero-bottom">
+      <div class="hero-intro">
+        <p class="intro-line">
+          I’m John Engates. I was CTO at Rackspace, Client CTO at NTT, and Field
+          CTO at Cloudflare.
+        </p>
+        <p>
+          Today I serve on the boards of Frost Bank and James Avery Artisan
+          Jewelry, speak about AI and cybersecurity, and run exAgentica, my
+          personal agentic AI lab. This site is the background: career, boards,
+          speaking, and press.
+        </p>
+        <div class="hero-links">
+          <a href="/about/" class="text-link">Read my story <span>→</span></a>
+          <a href={site.lab} class="text-link lab-link">
+            Current work at exAgentica <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <Image
+          src={portrait}
+          alt="Portrait of John Engates"
+          width={296}
+          height={296}
+          loading="eager"
+          quality={85}
+        />
+        <dl>
+          <dt>Based in</dt>
+          <dd>San Antonio, Texas</dd>
+          <dt>For organizers</dt>
+          <dd><a class="inline-link" href="/press/#kit">Bio and headshot</a></dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="ledger">
+      <div>
+        <span class="small-meta">2000 – 2018</span>
+        <strong>Rackspace</strong>
+        <p>Chief Technology Officer</p>
+      </div>
+      <div>
+        <span class="small-meta">2018 – 2020</span>
+        <strong>NTT Global Networks</strong>
+        <p>Client CTO</p>
+      </div>
+      <div>
+        <span class="small-meta">2021 – 2025</span>
+        <strong>Cloudflare</strong>
+        <p>VP and Field CTO</p>
+      </div>
+      <div>
+        <span class="small-meta">Current boards</span>
+        <strong>Frost Bank · James Avery</strong>
+        <p>Director</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="section wrap" aria-labelledby="background">
+    <SectionHead
+      eyebrow="01 / Background"
+      title="From a Texas ISP to the Situation Room."
+      id="background"
+      href="/about/"
+      linkLabel="Full story"
+    />
+    <div class="split" style="margin-top:32px">
+      <div>
+        <Photo
+          src={ipo}
+          alt="The Rackspace team applauding on the New York Stock Exchange bell podium under a Rackspace Hosting banner"
+          caption="Rackspace lists on the NYSE, August 8, 2008."
+          class="crop"
+        />
+      </div>
+      <div class="split-copy">
+        <p class="large-copy">
+          I co-founded one of the first ISPs in Texas, then spent nearly 18
+          years at Rackspace as it grew from a startup into a public company.
+        </p>
+        <p>
+          My teams hosted YouTube in its early days, built the storage system
+          that became OpenStack Swift, and helped start the Open Compute
+          Project. In 2013 the White House called when Healthcare.gov needed
+          help, and in 2015 I testified before Congress on cloud computing in
+          government.
+        </p>
+      </div>
+    </div>
+    <ol class="rows compact">
+      {
+        career.map((role) => (
+          <li>
+            <div class="row">
+              <span class="small-meta">{role.dates}</span>
+              <div>
+                <h3>{role.org}</h3>
+                <p class="org">{role.title}</p>
+                <p>{role.short}</p>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="section wrap" aria-labelledby="boards">
+    <SectionHead
+      eyebrow="02 / Boards & advisory"
+      title="Board service"
+      id="boards"
+      href="/boards/"
+      linkLabel="Boards and advisory"
+    />
+    <p class="section-dek">
+      I bring an operator’s view of technology and cyber risk to the boardroom.
+    </p>
+    <div class="card-grid">
+      {
+        boards.map((b) => (
+          <article class="card board">
+            <span class="small-meta">{b.meta}</span>
+            <h3>{b.org}</h3>
+            <p class="role">{b.role}</p>
+            <p>{b.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="speaking">
+    <SectionHead
+      eyebrow="03 / Speaking"
+      title="On stage and on the record"
+      id="speaking"
+      href="/speaking/"
+      linkLabel="Topics and appearances"
+    />
+    <p class="section-dek">
+      Keynotes, panels, podcasts, and broadcast interviews, from GigaOM
+      Structure to Germany’s national cybersecurity conference.
+    </p>
+    <div class="photo-grid">
+      <Photo
+        src={gigaom}
+        alt="John Engates speaking at a podium on stage at GigaOM Structure"
+        caption="GigaOM Structure, San Francisco, 2013."
+        class="crop"
+        sizes="(max-width: 700px) 100vw, 360px"
+      />
+      <Photo
+        src={potsdam}
+        alt="John Engates presenting at a lectern at the Hasso Plattner Institute"
+        caption="Potsdam Conference for National Cybersecurity, 2023."
+        class="crop"
+        sizes="(max-width: 700px) 100vw, 360px"
+      />
+      <Photo
+        src={latam}
+        alt="John Engates moderating a five-person panel on stage at the LATAM CISO Summit"
+        caption="Moderating at the LATAM CISO Summit, Costa Rica, 2024."
+        class="crop"
+        sizes="(max-width: 700px) 100vw, 360px"
+      />
+    </div>
+    <div class="card-grid four">
+      {
+        topics.map((t, i) => (
+          <article class="card">
+            <span class="small-meta">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{t.title}</h3>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="press">
+    <SectionHead
+      eyebrow="04 / Writing & press"
+      title="In print"
+      id="press"
+      href="/press/"
+      linkLabel="All writing and press"
+    />
+    <ol class="rows">
+      {
+        selectedPress.map((item) => (
+          <li>
+            <a class="row" href={item.url}>
+              <span class="small-meta">
+                {item.source}
+                {item.date && <br />}
+                {item.date}
+              </span>
+              <div>
+                <h3>{item.title}</h3>
+                {item.text && <p>{item.text}</p>}
+              </div>
+              <span class="row-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="section wrap" aria-labelledby="lab">
+    <SectionHead
+      eyebrow="05 / Current work"
+      title="The lab"
+      id="lab"
+    />
+    <div class="callout lab">
+      <p class="small-meta">exAgentica</p>
+      <div>
+        <p class="large-copy">
+          exAgentica is my personal agentic AI lab. I build multi-agent systems,
+          then I try to break them.
+        </p>
+        <p style="margin-top:10px">
+          Everything I’m working on now lives there: experiments in
+          coordination, security, and control, and Field Notes on what I learn.
+          This site covers how I got here.
+        </p>
+        <div class="hero-links">
+          <a href={site.fieldNotes} class="text-link lab-link">
+            Read the Field Notes <span>↗</span>
+          </a>
+          <a href={site.lab} class="text-link lab-link">
+            exagentica.ai <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="kit-head">
+    <SectionHead
+      eyebrow="06 / For organizers & press"
+      title="Bio and headshot"
+      id="kit-head"
+    />
+    <PressKit />
+  </section>
+
+  <Contact eyebrow="07 / Contact" />
+</Base>

@@ -1,0 +1,246 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Photo from '../components/Photo.astro';
+import Contact from '../components/Contact.astro';
+import { site } from '../data/site';
+import { career, milestones, recognition, education } from '../data/career';
+import portrait from '../assets/photos/portrait.png';
+import ipo from '../assets/photos/rackspace-ipo.jpg';
+import banner from '../assets/photos/nyse-rackspace-banner-2008.jpg';
+import leadership from '../assets/photos/rackspace-leadership-2005.jpg';
+import openstack from '../assets/photos/openstack-design-summit.jpg';
+import cfTeam from '../assets/photos/cloudflare-team.jpg';
+import ntt from '../assets/photos/ntt-hmg-conference.jpg';
+import whitehouse from '../assets/photos/whitehouse-side-view.jpg';
+import congress from '../assets/photos/congressional-testimony.jpg';
+
+const photos: Record<string, { src: ImageMetadata; alt: string; caption: string }[]> = {
+  Cloudflare: [
+    {
+      src: cfTeam,
+      alt: 'John Engates with a group of Cloudflare colleagues in front of windows overlooking a waterfront at dusk',
+      caption: 'With the Cloudflare team, including co-founder Michelle Zatlyn, at a partner event.',
+    },
+  ],
+  'NTT Global Networks': [
+    {
+      src: ntt,
+      alt: 'John Engates and three NTT colleagues standing beside an NTT Global Networks banner',
+      caption: 'With the NTT Global Networks team at the HMG Strategy CIO Executive Leadership Summit, New Jersey, 2019.',
+    },
+  ],
+  Rackspace: [
+    {
+      src: leadership,
+      alt: 'Group photo of the Rackspace senior leadership team, about 2005',
+      caption: 'The Rackspace senior leadership team, about 2005.',
+    },
+    {
+      src: banner,
+      alt: 'The New York Stock Exchange facade hung with an American flag and Rackspace Hosting banners',
+      caption: 'The New York Stock Exchange on IPO day, August 8, 2008.',
+    },
+  ],
+};
+---
+
+<Base
+  title="About | John Engates"
+  description="John Engates on 30 years in Internet infrastructure: a Texas ISP, nearly 18 years at Rackspace, NTT, Cloudflare, and now an independent AI lab."
+>
+  <section class="wrap page-header">
+    <p class="eyebrow">About</p>
+    <h1>I’ve spent 30 years building the Internet’s plumbing.</h1>
+    <p class="section-dek">
+      Hosting, cloud, networks, and security. Now I study what happens when the
+      software running on all of it starts making its own decisions.
+    </p>
+  </section>
+
+  <section class="section wrap">
+    <div class="about-grid">
+      <div class="prose">
+        <p class="large-copy">
+          I started in the mid-1990s by co-founding one of the first Internet
+          service providers in Texas. Since then I’ve worked on nearly every
+          layer of how the Internet is built and secured.
+        </p>
+        <p>
+          I joined Rackspace in 2000 and stayed for nearly 18 years, most of
+          them as CTO. My teams hosted YouTube in its early days, when “the
+          cloud” meant physical servers in real data centers. I helped build
+          Fanatical Support, the around-the-clock expert help that became the
+          company’s identity, and I was there when we listed on the New York
+          Stock Exchange in 2008.
+        </p>
+        <p>
+          In 2009 my team built the distributed storage system that became
+          OpenStack Swift. It now runs at CERN, Wikimedia, and hundreds of
+          other places. That same year, when a hardware engineering leader at
+          Facebook asked about open-sourcing data center hardware, I committed
+          Rackspace as a founding member of the Open Compute Project.
+        </p>
+        <p>
+          In 2013 the White House called. The launch of Healthcare.gov had
+          failed, and I sat in the Situation Room with other technology leaders
+          to talk through what went wrong and how to fix it. Two years later I
+          testified before Congress about why the federal government was slow
+          to adopt cloud computing.
+        </p>
+        <p>
+          After Rackspace I served as Client CTO at NTT Global Networks, then
+          joined Cloudflare, where I started and led the Field CTO team. We
+          advised large enterprises and public institutions on Zero Trust
+          security, AI, and getting ready for post-quantum cryptography.
+        </p>
+        <p>
+          Today I run <a href={site.lab}>exAgentica</a>, my personal agentic AI
+          lab. I approach multi-agent AI as a distributed systems problem,
+          because that is what it is: tools, memory, and permissions make each
+          agent part of something larger, and a local mistake can become a
+          system failure. I also serve on the boards of Frost Bank and James
+          Avery Artisan Jewelry, and I mentor founders through Techstars.
+        </p>
+        <p>
+          I split my time between Texas, where I work, and Colorado, where I
+          play. Away from a screen I’m usually off-roading, cycling,
+          snowboarding, or taking photographs of all three.
+        </p>
+      </div>
+      <aside>
+        <Photo
+          src={portrait}
+          alt="Portrait of John Engates"
+          class="aside-photo"
+          sizes="(max-width: 700px) 100vw, 380px"
+          eager
+        />
+        <p class="eyebrow">At a glance</p>
+        <ul class="facts">
+          <li>
+            <span class="small-meta">Now</span>
+            <strong>exAgentica</strong>
+            <p>Independent AI research</p>
+          </li>
+          <li>
+            <span class="small-meta">Boards</span>
+            <strong>Frost Bank · James Avery</strong>
+            <p><a class="inline-link" href="/boards/">Board and advisory work</a></p>
+          </li>
+          <li>
+            <span class="small-meta">Education</span>
+            <strong>{education.degree}</strong>
+            <p>{education.school}</p>
+          </li>
+          <li>
+            <span class="small-meta">Home</span>
+            <strong>San Antonio, Texas</strong>
+          </li>
+        </ul>
+        <p class="eyebrow aside-eyebrow">Recognition</p>
+        <ul class="facts">
+          {
+            recognition.map((r) => (
+              <li>
+                <span class="small-meta">{r.year}</span>
+                <strong>{r.title}</strong>
+                <p>{r.org}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="career">
+    <SectionHead eyebrow="01 / Career" title="Where I’ve worked" id="career" />
+    <ol class="rows">
+      {
+        career.map((role) => (
+          <li>
+            <div class="row">
+              <span class="small-meta">{role.dates}</span>
+              <div>
+                <h3>
+                  {role.url ? <a href={role.url}>{role.org}</a> : role.org}
+                </h3>
+                <p class="org">{role.title}</p>
+                {role.long.map((p) => (
+                  <p>{p}</p>
+                ))}
+                {photos[role.org] && (
+                  <div
+                    class={`row-photos ${photos[role.org].length === 1 ? 'one' : ''}`}
+                  >
+                    {photos[role.org].map((ph) => (
+                      <Photo
+                        src={ph.src}
+                        alt={ph.alt}
+                        caption={ph.caption}
+                        class="crop"
+                        sizes="(max-width: 700px) 100vw, 345px"
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="section wrap" aria-labelledby="moments">
+    <SectionHead eyebrow="02 / Moments" title="A few days I remember" id="moments" />
+    <div class="photo-grid two">
+      <Photo
+        src={ipo}
+        alt="The Rackspace team applauding on the New York Stock Exchange bell podium on IPO day"
+        caption="2008. Rackspace lists on the New York Stock Exchange."
+        class="crop"
+        sizes="(max-width: 700px) 100vw, 548px"
+      />
+      <Photo
+        src={openstack}
+        alt="An easel sign reading Welcome to the Design Summit with OpenStack and Rackspace logos"
+        caption="2010. The first OpenStack Design Summit, Austin, Texas."
+        class="crop"
+        sizes="(max-width: 700px) 100vw, 548px"
+      />
+      <Photo
+        src={whitehouse}
+        alt="The White House seen across the lawn in late autumn"
+        caption="2013. On the way to the Situation Room for the Healthcare.gov meeting."
+        class="crop"
+        sizes="(max-width: 700px) 100vw, 548px"
+      />
+      <Photo
+        src={congress}
+        alt="John Engates seated at a witness table speaking into a microphone during a congressional field hearing"
+        caption="2015. Testifying at “The State of the Cloud” hearing at UTSA."
+        class="crop"
+        sizes="(max-width: 700px) 100vw, 548px"
+      />
+    </div>
+    <ol class="rows compact">
+      {
+        milestones.map((m) => (
+          <li>
+            <div class="row">
+              <span class="small-meta">{m.year}</span>
+              <div>
+                <h3>{m.title}</h3>
+                <p>{m.text}</p>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <Contact eyebrow="03 / Contact" />
+</Base>
