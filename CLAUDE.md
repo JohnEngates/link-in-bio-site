@@ -32,7 +32,7 @@ npm run preview  # serve the built site
 - `src/pages/`: `index`, `about`, `speaking`, `boards`, `press`, `404`. Each numbers its sections with an eyebrow like `01 / Background`.
 - `src/pages/*.ts` endpoints generate `robots.txt`, `llms.txt`, `llms-full.txt`, `agents/index.md`, and `John_Engates_Speaker_Bio.txt` from `src/data/` via `src/lib/markdown.ts`.
 - `src/layouts/Base.astro`: head, nav, footer, theme toggle, analytics.
-- `src/components/`: `SectionHead`, `Photo` (optimized image with caption), `PressKit` (bio copy and downloads), `Contact`.
+- `src/components/`: `SectionHead`, `Photo` (optimized image with caption; click opens it in the viewer unless `zoom={false}`), `Lightbox` (the photo viewer, included once by the layout), `PressKit` (bio copy and downloads), `Contact`.
 - `src/styles/global.css`: design tokens and all styles.
 - `src/assets/photos/`: photographs, optimized by Astro at build. Photos on About and Speaking are attached to a role or appearance by a map at the top of each page.
 - `public/`: files served unchanged. `engates_john.jpg` is the headshot download, `john.png` the social image, `engates1x1.png` the square portrait.

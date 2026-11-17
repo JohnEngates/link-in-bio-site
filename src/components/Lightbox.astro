@@ -1,0 +1,91 @@
+---
+// One photo viewer per page. Any <a data-zoom> opens in it. Without
+// JavaScript those links still work: they open the full-size image.
+---
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <div class="lightbox-bar">
+    <span class="lightbox-count" aria-live="polite"></span>
+    <button class="lightbox-btn" type="button" data-close aria-label="Close viewer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+    </button>
+  </div>
+  <button class="lightbox-btn lightbox-prev" type="button" data-prev aria-label="Previous photo">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+  </button>
+  <figure class="lightbox-stage">
+    <img alt="" />
+    <figcaption></figcaption>
+  </figure>
+  <button class="lightbox-btn lightbox-next" type="button" data-next aria-label="Next photo">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>
+  </button>
+</dialog>
+
+<script is:inline>
+  (() => {
+    const dialog = document.getElementById('lightbox');
+    const links = [...document.querySelectorAll('a[data-zoom]')];
+    if (!dialog || !dialog.showModal || !links.length) return;
+    const img = dialog.querySelector('img');
+    const caption = dialog.querySelector('figcaption');
+    const count = dialog.querySelector('.lightbox-count');
+    let index = 0;
+    let opener = null;
+
+    function show(i) {
+      index = (i + links.length) % links.length;
+      const link = links[index];
+      img.width = link.dataset.w;
+      img.height = link.dataset.h;
+      img.src = link.href;
+      img.alt = link.querySelector('img')?.alt ?? '';
+      caption.textContent = link.dataset.caption;
+      caption.hidden = !link.dataset.caption;
+      count.textContent = links.length > 1 ? `${index + 1} / ${links.length}` : '';
+      dialog.classList.toggle('single', links.length < 2);
+      // Warm the neighbours so stepping through feels instant.
+      for (const n of [index + 1, index - 1]) {
+        const next = links[(n + links.length) % links.length];
+        if (next) new Image().src = next.href;
+      }
+    }
+
+    links.forEach((link, i) => {
+      link.addEventListener('click', (event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        opener = link;
+        show(i);
+        dialog.showModal();
+      });
+    });
+
+    dialog.querySelector('[data-prev]').addEventListener('click', () => show(index - 1));
+    dialog.querySelector('[data-next]').addEventListener('click', () => show(index + 1));
+    dialog.querySelector('[data-close]').addEventListener('click', () => dialog.close());
+    // A click on the dark area around the photo closes the viewer.
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog || event.target.classList.contains('lightbox-stage'))
+        dialog.close();
+    });
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') show(index - 1);
+      if (event.key === 'ArrowRight') show(index + 1);
+    });
+    dialog.addEventListener('close', () => {
+      img.removeAttribute('src');
+      opener?.focus({ preventScroll: true });
+    });
+
+    // Swipe left or right on touch screens.
+    let startX = null;
+    dialog.addEventListener('touchstart', (e) => (startX = e.touches[0].clientX), { passive: true });
+    dialog.addEventListener('touchend', (e) => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+      startX = null;
+    }, { passive: true });
+  })();
+</script>

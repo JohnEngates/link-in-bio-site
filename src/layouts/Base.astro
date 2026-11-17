@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { site, nav } from '../data/site';
+import Lightbox from '../components/Lightbox.astro';
 
 interface Props {
   title: string;
@@ -190,6 +191,7 @@ const schema = {
         </nav>
       </div>
     </footer>
+    <Lightbox />
     <script is:inline>
       document.getElementById('theme-toggle').addEventListener('click', () => {
         const root = document.documentElement;
