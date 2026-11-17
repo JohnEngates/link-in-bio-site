@@ -2,7 +2,7 @@ export const boards = [
   {
     org: 'Frost Bank',
     legal: 'Cullen/Frost Bankers, Inc.',
-    meta: 'NYSE: CFR · Public company',
+    meta: 'NYSE: CFR · Director since 2025',
     role: 'Director. Chair, Technology and Cybersecurity Committee',
     url: 'https://www.frostbank.com/leadership/john-engates',
     linkLabel: 'Board profile',
@@ -15,12 +15,12 @@ export const boards = [
   },
   {
     org: 'James Avery Artisan Jewelry',
-    legal: '',
+    legal: 'James Avery Craftsman, Inc.',
     meta: 'Private company · Founded 1954',
     role: 'Director',
     url: 'https://www.jamesavery.com/',
     linkLabel: 'jamesavery.com',
-    text: 'I serve on the board of the family-owned Texas jewelry company, where I focus on e-commerce, technology infrastructure, and cybersecurity.',
+    text: 'I serve on the board of James Avery Craftsman, Inc., the family-owned Texas company behind James Avery Artisan Jewelry. I focus on e-commerce, technology infrastructure, and cybersecurity.',
     focus: [
       'E-commerce and omnichannel retail',
       'Technology modernization',
@@ -47,7 +47,7 @@ export const advisory = [
     org: 'UTSA College of Sciences',
     role: 'Founding member, Advancement Council',
     meta: 'University of Texas at San Antonio',
-    text: 'I stay close to my alma mater through the College of Sciences Advancement Council, and I established the Edward Engates Memorial Endowed Scholarship in Computer Science there.',
+    text: 'I stay close to my alma mater through the College of Sciences Advancement Council, and Karen and I established the Edward Engates Memorial Endowed Scholarship in Computer Science there.',
   },
   {
     org: 'Angel investing',

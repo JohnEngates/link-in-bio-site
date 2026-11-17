@@ -205,7 +205,7 @@ export const appearances: { year: string; items: Appearance[] }[] = [
         title: 'White House meeting on Healthcare.gov',
         kind: 'Event',
         context: 'White House Situation Room · November 25, 2013',
-        text: 'Invited with other technology leaders to review the “tech surge” plan for fixing Healthcare.gov. I visited the operations center and gave advice on contractor coordination, automation, and database performance.',
+        text: 'Invited to the Obama White House to review the “tech surge” plan for fixing Healthcare.gov with Jeffrey Zients, Steven VanRoekel, Todd Park, and others. I visited the operations center and gave advice on contractor coordination, automation, and database performance.',
         url: 'https://www.infoworld.com/article/2171830/the-inside-scoop-on-how-healthcare-gov-is-getting-fixed.html',
         linkLabel: 'InfoWorld account',
       },

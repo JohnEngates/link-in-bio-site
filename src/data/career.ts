@@ -48,11 +48,12 @@ export const career: Role[] = [
     org: 'Rackspace',
     url: 'https://www.rackspace.com/',
     short:
-      'Nearly 18 years, most of them as CTO. Early YouTube hosting, the 2008 IPO, OpenStack, and the Open Compute Project.',
+      'Joined in 2000 as VP of Operations and became CTO in 2002. Early YouTube hosting, the 2008 IPO, RackLabs, and OpenStack.',
     long: [
-      'I spent nearly 18 years at Rackspace, most of them as CTO, as the company grew from a startup into a public company. I launched the Intensive Hosting division, which ran some of the most demanding workloads on the web, including YouTube in its early days, back when “the cloud” meant physical servers in real data centers.',
+      'I joined Rackspace in August 2000 as VP of Operations and became CTO in 2002, as the company grew from a startup into a public company. I launched the Intensive Hosting division, which ran some of the most demanding workloads on the web, including YouTube in its early days, back when “the cloud” meant physical servers in real data centers.',
       'I helped build Fanatical Support, the around-the-clock expert help that became the company’s identity. Rackspace went public on the New York Stock Exchange on August 8, 2008.',
-      'In 2009 my team built the distributed storage system that became OpenStack Swift, which now runs at CERN, Wikimedia, and hundreds of other deployments. When a hardware engineering leader at Facebook asked about open-sourcing data center hardware, I committed Rackspace as a founding member of the Open Compute Project.',
+      'I created and led RackLabs, the team that built Rackspace’s answer to Amazon S3. I recruited the engineers, showed the work to early customer prospects, and made the case inside the company that we could build a distributed storage system of our own. It was later released as open source and became OpenStack Swift, which now runs at CERN, Wikimedia, and hundreds of other deployments.',
+      'When Frank Frankovsky at Facebook called to ask whether Rackspace might want to help start the Open Compute Project, I got us involved. Rackspace became a founding member and a big part of the project, and I joined its board in 2017.',
     ],
   },
   {
@@ -62,7 +63,7 @@ export const career: Role[] = [
     short:
       'One of the first Internet service providers in Texas, serving the San Antonio area.',
     long: [
-      'I co-founded one of the first Internet service providers in Texas. We grew to more than 10,000 customers in the San Antonio area, and it is where I learned how Internet infrastructure scales and how it fails.',
+      'I was one of the co-founders of Internet Direct, one of the first Internet service providers in Texas. We grew to more than 10,000 customers in the San Antonio area, and it is where I learned how Internet infrastructure scales and how it fails.',
     ],
   },
 ];
@@ -76,12 +77,12 @@ export const milestones = [
   {
     year: '2013',
     title: 'Healthcare.gov',
-    text: 'When the Healthcare.gov launch failed, I was called to the White House. On November 25, 2013 I sat in the Situation Room with other technology leaders to review the plan to fix it.',
+    text: 'When the Healthcare.gov launch failed, I was called to the Obama White House. On November 25, 2013 I sat in the Situation Room with Jeffrey Zients, Steven VanRoekel, Todd Park, and others to review the plan to fix it.',
   },
   {
     year: '2010',
     title: 'OpenStack',
-    text: 'Rackspace and NASA launched OpenStack. The object storage half came from the system my team had built, now known as Swift.',
+    text: 'Rackspace and NASA launched OpenStack. The object storage half came from the system my RackLabs team had built, now known as Swift.',
   },
   {
     year: '2008',
