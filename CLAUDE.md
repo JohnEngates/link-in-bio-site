@@ -57,4 +57,4 @@ What differs here, on purpose:
 
 ## Deployment
 
-Cloudflare Pages deploys on push to `main`. Build command `npm run build`, output directory `dist`, `NODE_VERSION=22`. The site is served at johnengates.com (`site` in `astro.config.mjs`). `www.johnengates.com` and `bio.johnengates.com` still point at the Pages project, but a Cloudflare redirect rule on the zone ("Redirect rules", phase `http_request_dynamic_redirect`) sends both to johnengates.com with a 301, keeping the path and query string. `public/_redirects` forwards the old `/sitemap.xml` and `/bio.html` addresses.
+Cloudflare Pages deploys on push to `main`. Build command `npm run build`, output directory `dist`, `NODE_VERSION=22`. The site is served at johnengates.com (`site` in `astro.config.mjs`). `www.johnengates.com` and `bio.johnengates.com` still point at the Pages project, but a Cloudflare redirect rule on the zone ("Redirect rules", phase `http_request_dynamic_redirect`) sends both to johnengates.com with a 301, keeping the path and query string. `bio.engates.com` has the same rule on the engates.com zone. `public/_redirects` forwards the old `/sitemap.xml` and `/bio.html` addresses.
